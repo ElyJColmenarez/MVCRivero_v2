@@ -1,0 +1,146 @@
+#componentes .modal-footer h5{
+	color:white;
+	font-weight: bold;
+}
+#componentes .modal-footer{
+	background-color: #E65F5F;
+	text-align: left;
+}
+#componentes .modal-footer{
+	border-radius: 0px 0px 6px 6px;
+}
+#componentes .modal-header center{
+	font-weight: bold;
+}
+#componentes .modal-header{
+	border-radius: 6px 6px 0px 0px;
+}
+#componentes .modal-body{
+	color:black;
+}
+#componentes  .leyenda{
+	text-align:left;	
+}
+.instalacion {
+	
+	border: 2px  solid #CECECE;
+	border-radius: 6px 6px;
+}
+.instalacion h4{
+	color:black;
+	font-weight: bold;
+}
+#infHtmComponentes h5{
+	color:black;
+	font-size:10px;
+	font-weight: bold;
+}
+.icoComprobar{
+	color:#2C9BD3;
+}
+
+.instalacion h1{
+	font-weight: bold;
+	color:#CB385D;
+}
+.datAplicacion h4{
+	font-weight: bold;
+	color: #1C8BAC;
+}
+.botones{
+	font-size:30px ;
+	color:#6F91A7;
+}
+.pasInstalacion h5{
+	font-weight: bold;
+}
+
+
+.menExito{
+	font-weight: bold;
+}
+
+#finInstalacion .modal-footer h5{
+	font-weight: bold;
+	text-align: justify;
+	font-size: 10px;
+	color: #FE0A00;
+}
+#finInstalacion .modal-footer{
+	background-color: black;
+}
+.infPopover{
+	text-align: justify;
+}
+.icoInstalar{
+	font-size: 10px;
+	font-weight: bold;
+	color: blue;
+}
+.justificar{
+	text-align: justify;
+}
+.letPequena{
+
+	font-size: 11px;
+	color:black;
+
+}
+#insHtml{
+	 position: fixed;
+    
+     display: inline-block;
+ 
+	
+
+}
+.fixed{
+	 position: fixed;
+
+}
+
+.letPeqRoja{
+
+	font-size: 11px;
+	color:#B11010;
+
+}
+.letPeqPie{
+	font-size: 11px;
+	text-align: justify;
+}
+
+.spanPaso4{
+	background-color: #1D1D42;
+
+
+}
+
+.spanPaso5{
+	background-color: #FF3131;
+
+
+}
+
+.titPas1{
+	color: #5BC0DE;
+	font-weight: bold;
+}
+
+.titPas2{
+	color: #999;
+	font-weight: bold;
+}
+
+.titPas3{
+	color:#F0AD4E ;
+	font-weight: bold;
+}
+
+.titPas4{
+	color:#1D1D42;
+	font-weight: bold;
+}
+.titModal{
+	font-size: 20px;
+}

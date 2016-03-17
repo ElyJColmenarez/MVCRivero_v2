@@ -1,0 +1,369 @@
+{% extends 'Instalacion.html.twig' %}
+{% block contenido %}
+	<input type='hidden' value='{{Componentes.verPhp}}' id='verPhp'>
+	<input type='hidden' value='{{Componentes.verPostgres}}' id='verPostgres'>
+	<input type='hidden' value='{{Componentes.postgres}}' id='postgres'>
+	<input type='hidden' value='{{Componentes.pdo}}' id='pdo'>
+	<input type='hidden' value='{{Componentes.conPostgres}}' id='conPostgres'>
+	<input type='hidden' value='{{Componentes.disErrors}}' id='disErrors'>
+	<input type='hidden' value='{{Componentes.permisos}}' id='permisos'>
+	
+	</br>
+	</br>
+
+	<div class="container">
+		
+		<div class='row  '>
+			<div class="col-lg-11">
+				<center><h1><img src='recursos/imgPropias/fotos/mvc2.png'  height='70' width='70' class='img-circle'>Creación de la aplicación</h1></center>
+			</div>
+			<div class="col-lg-1">
+				<br>
+				<br>
+				<center><a href="otros/manuales/usuario/index.html" target="_blank"> <i  title="Ayuda"class="glyphicon glyphicon-question-sign iconoAyuda"></i> </a></center>
+			</div>
+		</div>
+
+		<div class='row '>
+			<div class="col-md-8 datA plicacion">
+				<div class="divConexion">
+				<div class="row">
+					<div class="col-md-12">
+						<center><h4 class='titPas4'>Parámetros de conexión al sistema gestor de base de datos (Paso 1) </h4> </center>
+						<hr>
+					
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="input-group">
+  							<span class="input-group-addon" title="Usuario"><i class="icon-user"></i></span>
+  							<input onblur="requerido('#usuario')" type="text" class="form-control 1" placeholder="Usuario" id="usuario">
+						</div>	
+					</div>
+					<div class="col-md-4">
+						<div class="input-group">
+  							<span class="input-group-addon" title="Contraseña"><i class="icon-key"></i></span>
+  							<input onblur="requerido('#contraseña')" type="password" class="form-control 1" placeholder="Contraseña" id="contraseña">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="input-group">
+  							<span class="input-group-addon" title="Servidor"><i class="icon-building"></i></span>
+  							<input onblur="requerido('#servidor')"  type="text" class="form-control 1" placeholder="Servidor" id="servidor">
+						</div>
+					</div>
+
+				</div>
+				<br>
+				<div class="row ">
+					<div class="col-md-2"> </div>
+					<div class="col-md-4">
+						<div class="input-group">
+  							<span class="input-group-addon" title="Puerto"><i class="icon-random"></i></span>
+  							<input onkeyup="validarSoloNumeros('#puerto',1,10,true)" type="text" class="form-control 1" placeholder="Puerto" id="puerto">
+						</div>
+					</div>
+					<div class='col-md-4'>
+						<center>
+							
+							<a id='selBasDatos'>
+							<select class='selectpicker 1' id='basDeDatos' data-live-search='true' data-size='auto' multiple data-max-options="1" title='Base de datos'>
+								<option value='p'>PostgreSql</option>
+								<option value='m'>MySql</option>
+							</select>
+							</a>
+							
+						</center>
+					</div>
+
+				</div>		
+
+				<br>
+				
+				</div>
+				<div class="divBaseDeDatos">
+				<div class="row">
+
+					<div class="col-md-12">
+
+						<center><h4 class= 'titPas4'>Información de la base de datos a crear para la nueva aplicación (Paso 2)</h4></center>
+						<hr>
+					</div>
+
+				</div>
+
+				<div class="row">
+
+					<div class="col-md-6">
+
+						<div class="input-group">
+  							<span class="input-group-addon" title="Nombre de base de datos"><i></i>Nombre de Base de datos</span>
+  							<input onblur="requerido('#nomBD')" type="text" class="form-control 2" placeholder="Nombre de base de datos" id="nomBD">
+						</div>
+
+					</div>	
+
+					<div class="col-md-6">
+
+						<center>
+							<a id='selCodificacion'>
+								<select class='selectpicker 2' id='codificacion' data-live-search='true' data-size='auto' multiple data-max-options="1" title='Codificación'>
+								<option value='UTF8' selected>UTF-8</option>   <option value='BIG5'>BIG5</option>
+								<option value='EUC_CN'>EUC_CN</option> <option value='EUC_JP'>EUC_JP</option>
+								<option value='EUC_JIS_2004'>EUC_JIS_2004</option> 
+								<option value='EUC_KR'>EUC_KR</option> <option value='EUC_TW'>EUC_TW</option>
+								<option value='GB18030'>GB18030</option> <option value='GBK'>GBK</option>
+								<option value='ISO_8859_5'>ISO_8859_5</option>
+								<option value='ISO_8859_6'>ISO_8859_6</option>
+								<option value='ISO_8859_7'>ISO_8859_7</option>
+								<option value='ISO_8859_8'>ISO_8859_8</option>
+								<option value='JOHAB'>JOHAB</option> <option value='KOI8R'>KOI8R</option>
+								<option value='KOI8U'>KOI8U</option> <option value='LATIN1'>LATIN1</option>
+								<option value='LATIN2'>LATIN2</option> <option value='LATIN3'>LATIN3</option>
+								<option value='LATIN4'>LATIN4</option> <option value='LATIN5'>LATIN5</option>
+								<option value='LATIN6'>LATIN6</option> <option value='LATIN7'>LATIN7</option>
+								<option value='LATIN8'>LATIN8</option> <option value='LATIN9'>LATIN9</option>
+								<option value='LATIN10'>LATIN10</option>
+								<option value='MULE_INTERNAL'>MULE_INTERNAL</option>
+								<option value='SJIS'>SJIS</option>
+								<option value='SHIFT_JIS_2004'>SHIFT_JIS_2004</option>
+								<option value='SQL_ASCII'>SQL_ASCII</option> <option value='UHC'>UHC</option>
+								<option value='WIN866'>WIN866</option> <option value='WIN874'>WIN874</option>
+								<option value='WIN1250'>WIN1250</option>
+								<option value='WIN1251'>WIN1251</option>
+								<option value='WIN1252'>WIN1252</option>
+								<option value='WIN1253'>WIN1253</option>
+								<option value='WIN1254'>WIN1254</option>
+								<option value='WIN1255'>WIN1255</option>
+								<option value='WIN1256'>WIN1256</option>
+								<option value='WIN1257'>WIN1257</option>
+								<option value='WIN1258'>WIN1258</option>
+								
+								</select>
+							</a>
+						</center>
+
+					</div>
+
+				</div>
+				</div>
+				<div class="divAdministrador">
+				<div class="row">
+
+					<div class="col-md-12">
+						<center><h4 class= 'titPas4'>Datos del administrador de la aplicación y de la base de datos (Paso 3)</h4></center>
+						<hr>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="input-group">
+  							<span class="input-group-addon" title="Nombre"><i></i>Nombre</span>
+  							<input onkeyup="validarSoloTexto('#nombre',2,20,true)" type="text" class="form-control 3" placeholder="Nombre" id="nombre">
+						</div>
+
+					</div>
+					<div class="col-md-4">
+						<div class="input-group">
+  							<span class="input-group-addon" title="Apellido"><i></i>Apellido</span>
+  							<input onkeyup="validarSoloTexto('#apellido',2,20,true)" type="text" class="form-control 3" placeholder="Apellido" id="apellido">
+						</div>
+					</div>
+					<div class="col-md-4 ">
+							<div class="input-group inputUsuario">
+  								<span class="input-group-addon" title="Nombre de usuario"><i></i>Usuario</span>
+  								<input onblur="requerido('#nomUsuario')" type="text" class="form-control 3 " placeholder="Nombre de usuario" id="nomUsuario">
+							</div>
+					</div>
+
+				</div>	
+				
+				<br>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="input-group">
+  							<span class="input-group-addon" title="Contraseña"><i class="icon-key"></i></span>
+  							<input onblur="requerido('#conUsuario')" type="password" class="form-control 3" placeholder="Contraseña" id="conUsuario">
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="input-group">
+  							<span class="input-group-addon" title="Repetir contraseña"><i class="icon-key"></i></span>
+  							<input onblur="requerido('#conUsuario2')" type="password" class="form-control 3" placeholder=" Repetir contraseña" id="conUsuario2">
+						</div>
+					</div>
+
+				</div>
+				</div>
+				<div class="divAplicacion">
+
+				<div class="row">
+
+					<div class="col-md-12">
+
+						<center><h4 class='titPas4'>Datos de la aplicación a crear (Paso 4)</h4></center>
+						<hr>
+					</div>
+
+				</div>
+			
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="input-group">
+  							<span class="input-group-addon" title="Nombre"><i></i>Nombre</span>
+  							<input onblur="requerido('#nomAplicacion')" type="text" class="form-control 4" placeholder="Nombre aplicación" id="nomAplicacion">
+					</div>
+
+				</div>
+				<div class="col-md-6">
+					<div class="input-group">
+  							<span class="input-group-addon" title="Abreviación"><i></i>Abreviación</span>
+  							<input onblur="requerido('#abrAplicacion')" type="text" class="form-control 4" placeholder="Abreviación de la aplicación" id="abrAplicacion">
+					</div>
+
+				</div>
+			
+			</div>	
+			<br>
+		
+			
+			</div>
+
+			<div class="divUsuCrear">
+				<div class="row">
+					<div class="col-md-7 divUsuario">
+						<div class="row">
+							<div class="col-md-12">
+								<center><h4 class='titPas4'> Seleccionar tipos de usuarios (Paso 5)</h4></center>
+								<hr>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<center><a id="Swit" >
+									<p>
+			 	            			<input  id="switch-onColor" name="chect" type="checkbox" onfocus="activarSwitch()" checked>
+
+			   						 </p>
+								</a>
+								</center>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-5 divCrear">
+						<div class="row">
+							<div class="col-md-12">
+								<center><h4 class='titPas4'> Crear Aplicación </h4></center>
+								<hr>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<center><a href="javascript:creAplicacion()" title="Instalar aplicación">
+									<i ><img src='recursos/imgPropias/fotos/Mvc.png'  height='70' width='70' class='img-circle'></i>
+									<h5 class='icoInstalar'>Pulse el ícono para<br> instalar la aplicación</h5></a>
+								</center>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div class="col-md-4" id="insHtml">
+				<div class="container">
+				<div class="container">
+
+				
+				<div class='row instalacion' >
+					<div class='col-md-10'> 
+						<center><h4>Componentes necesarios</h4></center>
+					</div>
+					<div class='col-md-2'>
+						<a href="javascript:comInstalacion(funSucHtml)" title="Comprobar componentes">
+							 <i class='icon-repeat icoComprobar' ></i>
+						</a>
+
+					</div>
+				</div>
+				<div  id='htmComponentes'>
+					<div class='row instalacion' id='infHtmComponentes'></div>
+				</div>
+
+				<div class='row'>
+					<div class='col-md-12 pasInstalacion'>
+						
+						
+						<h5><center>Pasos de la instalación:</center></h5>
+
+						<div class="row">
+							<div class="col-md-2 divConexion " id="paso1">
+								<span id="spanPaso1" class="label label-info">Paso 1 <i class='icon-remove' style='color:red'></i></span>
+							</div>
+							<div class="col-md-2 divBaseDeDatos" id="paso2">
+								<span id="spanPaso2" class="label label-success">Paso 2 <i class='icon-remove' style='color:red'></i></span>
+							</div>
+							<div class="col-md-2 divAdministrador" id="paso3">
+								<span id="spanPaso3" class="label label-warning">Paso 3 <i class='icon-remove' style='color:red'></i></span>
+							</div>
+							<div class="col-md-2 divAplicacion" id="paso4">
+								<span id="spanPaso4" class="label spanPaso4">Paso 4 <i class='icon-remove' style='color:red'></i></span>
+							</div>
+							<div class="col-md-2 divUsuario" id="paso5">
+								<span id="spanPaso5" class="label spanPaso5">Paso 5 <i class='icon-remove' style='color:red'></i></span>
+							</div>
+						</div>
+						<br>
+						<div class="progress">
+ 							<div class="progress-bar progress-bar-info" id="barraProgreso" >
+    								<span id= "progresoTexto"  > 0% Completado </span>
+ 							</div>
+ 							
+						</div>
+					</div>
+				</div>
+				<div  id='hoverAyuda'>
+
+				</div>
+				<br>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+		</div>
+
+
+	</div>
+	
+   
+
+
+
+
+
+
+{% endblock  %}

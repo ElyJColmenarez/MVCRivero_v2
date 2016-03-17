@@ -1,0 +1,155 @@
+
+.iconoAgregar{
+font-size: 25px;
+color: #5cb85c;
+
+}
+.panel-heading{
+	 padding: 1px;
+}
+.modal-footer{
+	background-color: #26132C;
+}
+.list-group-item {
+
+    padding: 5px 15px;
+}
+
+#lisModulos {
+  height: 160px; 
+
+  overflow: auto;
+}
+
+.titBold{
+	font-weight: bold;
+
+}
+.iconoModificar{
+color: #69B1DE;
+}
+.iconoModificar:hover {
+    color: #16567D;
+    font-size: 20px;
+} 
+.iconoEliminar{
+color: #DF394F;
+}
+.iconoEliminar:hover{
+color: red;
+font-size: 20px;
+}
+.moduloElementos:hover{
+
+color: #16567D;
+background-color : #000000;
+}
+.titBlanco{
+	color:white;
+}
+
+.tamano{
+	width: 5px;
+}
+.iconoClonar:hover{
+width: 25px;
+height: 22px;
+}
+#listaAcciones {
+  height: 300px; 
+  overflow: auto;
+
+}
+
+.accionesElementos:hover{
+
+color: #16567D;
+background-color : #000000;
+}
+
+.list-group-item {
+
+    padding: 5px 15px;
+}
+
+.titutoNoAgregada{
+
+	background-color : #F25B6A;
+}
+.titutoTablaNoExistente{
+background-color : #DBEB2E;
+
+}
+
+.tablasP {
+  height: 200px; 
+  overflow: auto;
+}
+.iconoCargar{
+color: #35BBA8;
+}
+.iconoCargar:hover {
+    color: #ADD8E6;
+    font-size: 20px;
+} 
+
+#icoDesaparecerTabla{
+
+	font-size: 20px;
+}
+.pieModal{
+	text-align: left;
+	color:#2D86A8;
+
+}
+#modalTabla .modal-footer{
+	background-color: #26132C;
+}
+#accTabla{
+	height: 200px; 
+  	overflow: auto;
+}
+
+.titTabla{
+	background-color:#C9D7D7; 
+	
+}
+.icoInsert{
+
+	color: #3E4AB9;
+}
+
+.icoSelect{
+
+	color: green;
+}
+.icoUpdate{
+
+	color: #FFFF00;
+}
+.icoDelete{
+
+	color: #FF0000;
+}
+
+
+.titNegro{
+	background-color:#222;
+
+}
+.letBlancas{
+	color:white;
+}
+#panelAcciones{
+  border: 0px solid white;
+
+}
+
+.azul{
+	color: #1E90FF;
+}
+
+.iconoAyuda{
+	font-size: 20px;
+	color: #1E90FF;
+}

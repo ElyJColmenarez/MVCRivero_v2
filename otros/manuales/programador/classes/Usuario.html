@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">35</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1942980198"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1942980198" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Accion.html">Accion</a></li>
+                                                    <li class="class"><a href="../classes/AccionControlador.html">AccionControlador</a></li>
+                                                    <li class="class"><a href="../classes/AccionServicio.html">AccionServicio</a></li>
+                                                    <li class="class"><a href="../classes/Componentes.html">Componentes</a></li>
+                                                    <li class="class"><a href="../classes/Conexion.html">Conexion</a></li>
+                                                    <li class="class"><a href="../classes/ErrorControlador.html">ErrorControlador</a></li>
+                                                    <li class="class"><a href="../classes/ErrorServicio.html">ErrorServicio</a></li>
+                                                    <li class="class"><a href="../classes/Instalacion.html">Instalacion</a></li>
+                                                    <li class="class"><a href="../classes/InstalacionControlador.html">InstalacionControlador</a></li>
+                                                    <li class="class"><a href="../classes/InstalacionServicio.html">InstalacionServicio</a></li>
+                                                    <li class="class"><a href="../classes/Instituto.html">Instituto</a></li>
+                                                    <li class="class"><a href="../classes/InstitutoControlador.html">InstitutoControlador</a></li>
+                                                    <li class="class"><a href="../classes/InstitutoServicio.html">InstitutoServicio</a></li>
+                                                    <li class="class"><a href="../classes/LoginControlador.html">LoginControlador</a></li>
+                                                    <li class="class"><a href="../classes/LoginServicio.html">LoginServicio</a></li>
+                                                    <li class="class"><a href="../classes/manejoErrores.html">manejoErrores</a></li>
+                                                    <li class="class"><a href="../classes/Modulo.html">Modulo</a></li>
+                                                    <li class="class"><a href="../classes/ModuloControlador.html">ModuloControlador</a></li>
+                                                    <li class="class"><a href="../classes/ModuloServicio.html">ModuloServicio</a></li>
+                                                    <li class="class"><a href="../classes/Permisos.html">Permisos</a></li>
+                                                    <li class="class"><a href="../classes/PostGet.html">PostGet</a></li>
+                                                    <li class="class"><a href="../classes/PrincipalControlador.html">PrincipalControlador</a></li>
+                                                    <li class="class"><a href="../classes/Sesion.html">Sesion</a></li>
+                                                    <li class="class"><a href="../classes/Tabla.html">Tabla</a></li>
+                                                    <li class="class"><a href="../classes/TablaAccion.html">TablaAccion</a></li>
+                                                    <li class="class"><a href="../classes/TablaControlador.html">TablaControlador</a></li>
+                                                    <li class="class"><a href="../classes/TablaServicio.html">TablaServicio</a></li>
+                                                    <li class="class"><a href="../classes/Usuario.html">Usuario</a></li>
+                                                    <li class="class"><a href="../classes/UsuarioControlador.html">UsuarioControlador</a></li>
+                                                    <li class="class"><a href="../classes/UsuarioServicio.html">UsuarioServicio</a></li>
+                                                    <li class="class"><a href="../classes/Util.html">Util</a></li>
+                                                    <li class="class"><a href="../classes/Vista.html">Vista</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>Usuario</h1>
+                    <p><em></em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Usuario.html#method_asignarCodigo" class="">asignarCodigo()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_obtenerCodigo" class="">obtenerCodigo()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_asignarUsuario" class="">asignarUsuario()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_obtenerUsuario" class="">obtenerUsuario()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_asignarTipo" class="">asignarTipo()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_obtenerTipo" class="">obtenerTipo()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_asignarCampo1" class="">asignarCampo1()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_obtenerCampo1" class="">obtenerCampo1()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_asignarCampo2" class="">asignarCampo2()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_obtenerCampo2" class="">obtenerCampo2()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_asignarCampo3" class="">asignarCampo3()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_obtenerCampo3" class="">obtenerCampo3()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_asignarClave" class="">asignarClave()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_obtenerClave" class="">obtenerClave()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_asignarPermisos" class="">asignarPermisos()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_obtenerPermiso" class="">obtenerPermiso()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_obtenerPermisosJavascript" class="">obtenerPermisosJavascript()</a><br />
+                                                                    <a href="../classes/Usuario.html#method_obtenerPermisos" class="">obtenerPermisos()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Usuario.html#property_codigo" class="">$codigo</a><br />
+                                                                    <a href="../classes/Usuario.html#property_clave" class="">$clave</a><br />
+                                                                    <a href="../classes/Usuario.html#property_usuario" class="">$usuario</a><br />
+                                                                    <a href="../classes/Usuario.html#property_tipo" class="">$tipo</a><br />
+                                                                    <a href="../classes/Usuario.html#property_campo1" class="">$campo1</a><br />
+                                                                    <a href="../classes/Usuario.html#property_campo2" class="">$campo2</a><br />
+                                                                    <a href="../classes/Usuario.html#property_campo3" class="">$campo3</a><br />
+                                                                    <a href="../classes/Usuario.html#property_permisos" class="">$permisos</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/negocio.Usuario.html"><div class="path-wrapper">negocio/Usuario.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">MVC</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\Usuario</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr><td colspan="2"><em>None found</em></td></tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_codigo" name="property_codigo" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$codigo</h3>
+                <pre class="signature">$codigo : Integer|null</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                Integer|null
+                &mdash; entero que representa el código del usuario                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_clave" name="property_clave" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$clave</h3>
+                <pre class="signature">$clave : Integer|null</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                Integer|null
+                &mdash; contraseña del usuario                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_usuario" name="property_usuario" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$usuario</h3>
+                <pre class="signature">$usuario : String|null</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String|null
+                &mdash; cadena que representa el nombre del usuario                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_tipo" name="property_tipo" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$tipo</h3>
+                <pre class="signature">$tipo : \Char|null</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \Char|null
+                &mdash; cadena que representa el tipo de usuario U(usuario) R(rol)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_campo1" name="property_campo1" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$campo1</h3>
+                <pre class="signature">$campo1 : String|null</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String|null
+                &mdash; cadena donde se puede guardar cualquier información adicional del usuario.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_campo2" name="property_campo2" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$campo2</h3>
+                <pre class="signature">$campo2 : String|null</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String|null
+                &mdash; cadena donde se puede guardar cualquier información adicional del usuario.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_campo3" name="property_campo3" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$campo3</h3>
+                <pre class="signature">$campo3 : String|null</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String|null
+                &mdash; cadena donde se puede guardar cualquier información adicional del usuario.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_permisos" name="property_permisos" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$permisos</h3>
+                <pre class="signature">$permisos : \Permiso|null</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                \Permiso|null
+                &mdash; objeto que representa los permisos del usuario.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarCodigo" name="method_asignarCodigo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarCodigo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarCodigo(Integer  <span class="argument">$codigo</span>) : \this</pre>
+                <p><em>Método público que permite asignar el código al objeto Usuario.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>Integer</td>
+                                <td>$codigo </td>
+                                <td><p>Código del usuario.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerCodigo" name="method_obtenerCodigo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerCodigo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerCodigo() : Integer</pre>
+                <p><em>Método público que permite obtener el código del objeto Usuario.</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    Integer
+                                            &mdash; <p>|| null              Código del usuario.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarUsuario" name="method_asignarUsuario" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarUsuario()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarUsuario(string  <span class="argument">$usuario</span>) : \this</pre>
+                <p><em>Método público que permite asignar el usuario al objeto Usuario.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$usuario </td>
+                                <td><p>Nombre del usurio.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerUsuario" name="method_obtenerUsuario" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerUsuario()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerUsuario() : String</pre>
+                <p><em>Método público que permite obtener el usuario del objeto Usuario.</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>|| null               Nombre del usuario.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarTipo" name="method_asignarTipo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarTipo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarTipo(String  <span class="argument">$tipo</span>) : \this</pre>
+                <p><em>Método público que permite asignar el tipo al objeto Usuario.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$tipo </td>
+                                <td><p>Tipo de ususario U(usuario) o R(rol).</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerTipo" name="method_obtenerTipo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerTipo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerTipo() : String</pre>
+                <p><em>Método público que permite obtener el tipo del objeto Usuario.</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>|| null               Tipo del usuario.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarCampo1" name="method_asignarCampo1" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarCampo1()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarCampo1(String  <span class="argument">$campo1</span>) : \this</pre>
+                <p><em>Método público que permite asignar el campo1 al objeto Usuario.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$campo1 </td>
+                                <td><p>Donde se puede guardar cualquier información adicional del usuario.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerCampo1" name="method_obtenerCampo1" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerCampo1()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerCampo1() : String</pre>
+                <p><em>Método público que permite obtener el campo1 del objeto Usuario.</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>|| null               campo1.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarCampo2" name="method_asignarCampo2" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarCampo2()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarCampo2(String  <span class="argument">$campo2</span>) : \this</pre>
+                <p><em>Método público que permite asignar el campo2 al objeto Usuario.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$campo2 </td>
+                                <td><p>Donde se puede guardar cualquier información adicional del usuario.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerCampo2" name="method_obtenerCampo2" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerCampo2()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerCampo2() : String</pre>
+                <p><em>Método público que permite obtener el campo2 del objeto Usuario.</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>|| null               campo2.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarCampo3" name="method_asignarCampo3" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarCampo3()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarCampo3(String  <span class="argument">$campo3</span>) : \this</pre>
+                <p><em>Método público que permite asignar el campo3 al objeto Usuario.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$campo3 </td>
+                                <td><p>Donde se puede guardar cualquier información adicional del usuario.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerCampo3" name="method_obtenerCampo3" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerCampo3()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerCampo3() : String</pre>
+                <p><em>Método público que permite obtener el campo3 del objeto Usuario.</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>|| null               campo3.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarClave" name="method_asignarClave" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarClave()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarClave(String  <span class="argument">$clave</span>) : \this</pre>
+                <p><em>Método público que permite asignar la clave al objeto Usuario.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$clave </td>
+                                <td><p>clave del usuario.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerClave" name="method_obtenerClave" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerClave()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerClave() : String</pre>
+                <p><em>Método público que permite obtener la clave del objeto Usuario.</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>|| null               clave.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarPermisos" name="method_asignarPermisos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarPermisos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarPermisos(\strig  <span class="argument">$permisos</span>) </pre>
+                <p><em>Funcion publica que permite asignar el objeto permiso al usuario.</em></p>
+                <p>Permite asignarle el objeto permiso a el usuario para que se administre
+la permisologia de este con dicho objeto.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\strig</td>
+                                <td>$permisos </td>
+                                <td><p>Objeto Permiso.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>Mensaje de no se pudo asignar los permisos.
+.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerPermiso" name="method_obtenerPermiso" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerPermiso()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerPermiso(\strig  <span class="argument">$accion</span>) : boolean</pre>
+                <p><em>Funcion publica que permite verificar un permiso o acción</em></p>
+                <p>Permite verificar un permiso o accion, si el usuario lo posee retorna true
+si no retorna un 0 que se puede conparar con false.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\strig</td>
+                                <td>$accion </td>
+                                <td><p>Accion que se verificara.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>Mensaje de no se pudo obtener el permiso.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>True en caso de tener permiso y false en caso de que no tenga permiso.                      .</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerPermisosJavascript" name="method_obtenerPermisosJavascript" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerPermisosJavascript()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerPermisosJavascript(  <span class="argument">$nombreVar</span>) : \Strin</pre>
+                <p><em>Funcion publica que permite obtener la permisologia en acciones en javascript</em></p>
+                <p>Permite obtener una cadena javascript que al insertarla en javascrip genera la permisologia
+del usuario y esta se puede obtener mediante el nombre que se pasa por parametro + '.' + el nombre
+de la acción que se desea consultar el permiso del usuario y esto retornara true(1) de tener permiso
+y false(0) de no tener permiso. ejemplo prueba.insertarUsuario</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$nombreVar </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>De exepciones ajenas.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    \Strin
+                                            &mdash; <p>Cadena javascript.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerPermisos" name="method_obtenerPermisos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerPermisos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerPermisos() : Object</pre>
+                <p><em>Funcion publica que permite obtener el objeto permiso del usuario.</em></p>
+                <p>Permite obtener el objeto permiso del usuario para que se administre
+la permisologia de este con dicho objeto.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>Mensaje de no se pudo asignar los permisos.
+.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    Object
+                                            &mdash; <p>Permiso             Objeto Permiso.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Usuario.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/negocio/Usuario.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on March 15th, 2016 at 20:19.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

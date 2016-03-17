@@ -1,0 +1,531 @@
+body{
+
+	background-color: #252830;
+}
+
+#imgPrincipal{
+	
+
+height: 450px;
+background-size: cover;
+}
+
+
+.h1Title{
+   font-size: 42px;
+   line-height: 1;
+   color: inherit;
+   font-family: "Work sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   margin-top: 21px;
+	margin-bottom: 10.5px;
+	font-weight: 500;
+	margin: 0.67em 0;
+	box-sizing: border-box;
+	color:white;
+}
+
+.pTitle{
+
+	font-size: 21px;
+	color: rgba(255, 255, 255, .7);
+	margin-bottom: 30px !important;
+	font-weight: 300;
+	line-height: 1.6;
+	letter-spacing: -0.02em;
+	margin: 0 0 10.5px;
+	box-sizing: border-box;
+}
+
+.mvcriveroProfile{
+
+	margin-bottom: 30px !important;
+	border-color: #d3e0e9;
+	background-color: #252830;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	box-sizing: border-box;
+	width: 100%;
+	top:1px;
+
+}
+.fondoMVC{
+
+	height: 150px;
+	background-size: cover;
+	color: #1e3948;
+    background-color: #f5f5f5;
+    border-color: #d3e0e9;
+    padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	box-sizing: border-box;
+	 border-radius: 25px 25px 0px 0px;
+}
+
+.informacion{
+
+	padding: 15px;
+	text-align: center;
+	box-sizing: border-box;
+	background-color: white;
+	 border-radius: 0px 0px 25px 25px;
+}
+
+.imgProfile{
+	max-width: 100px;
+margin-top: -70px;
+margin-bottom: 5px;
+border: 3px solid #fff;
+border-radius: 100%;
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+vertical-align: middle;
+box-sizing: border-box;
+
+
+}
+
+.nombreProfile{
+	margin-bottom: 5px;
+	margin-top: 0;
+	font-size: 16px;
+	color: inherit;
+	text-decoration: inherit;
+	background-color: transparent;
+}
+
+.descripcionProfile{
+margin-bottom: 30px !important;
+margin: 0 0 11px;
+box-sizing: border-box;
+
+}
+
+.imgGit{
+width: 30px;
+height: 30px;
+
+}
+
+.izquierda{
+align: left;
+
+}
+
+.informacionFramework{
+
+background-color: white;
+ border-radius: 15px 15px 15px 15px;
+
+}
+
+.h5InfoGeneral{
+	color:#596361;
+	font-size: 14px ;
+	font-weight:bold;
+	
+}
+
+.imgGit2{
+width: 20px;
+height: 20px;
+
+}
+
+#listaContenido{
+
+position: relative;
+
+width: 520px;
+
+
+margin-top: 30px;
+font-size: 13px;
+list-style: none;
+margin-bottom: 11px;
+}
+
+#listaContenido-requisito{
+
+	color: #536570;
+padding-left: 20px;
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+}
+#listaContenido-introduccion{
+	color: #536570;
+	padding-left: 20px;
+	display: block;
+	padding: 2px 10px 2px 10px;
+	text-decoration: none;
+}
+
+#listaContenido-accion{
+	color: #536570;
+	padding-left: 20px;
+	display: block;
+	padding: 2px 10px 2px 10px;
+	text-decoration: none;
+	
+
+}
+#listaContenido-tabla{
+	color: #536570;
+	padding-left: 20px;
+	display: block;
+	padding: 2px 10px 2px 10px;
+	text-decoration: none;
+	
+
+}
+
+.imgMensaje{
+	align:center; 
+	max-width: 100%;
+	height: 40px;
+
+}	
+#listaContenido-modulo{
+	color: #536570;
+	padding-left: 20px;
+	display: block;
+	padding: 2px 10px 2px 10px;
+	text-decoration: none;
+	
+
+}
+#listaContenido-usuario{
+	color: #536570;
+	padding-left: 20px;
+	display: block;
+	padding: 2px 10px 2px 10px;
+	text-decoration: none;
+	
+
+}
+
+#listaContenido-privilegios{
+	color: #536570;
+	padding-left: 20px;
+	display: block;
+	padding: 2px 10px 2px 10px;
+	text-decoration: none;
+	
+
+}
+#listaContenido-otorgarPrivilegio{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+#listaContenido-revocarPrivilegio{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+#listaContenido-clonarPrivilegios{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+#listaContenido-agregarUsuario{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+#listaContenido-modificarUsuario{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+#listaContenido-eliminarUsuario{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+
+
+
+
+
+#listaContenido-agregarTabla{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+#listaContenido-modificarTabla{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+#listaContenido-eliminarTabla{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+#listaContenido-agregarAccion{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+
+#listaContenido-modificarAccion{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+#listaContenido-eliminarAccion{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+
+#listaContenido-agregarModulo{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+
+#listaContenido-modificarModulo{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+#listaContenido-eliminarModulo{
+
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+}
+
+
+
+.imgCodigo{
+	align:center; 
+	max-width: 100%;
+	height: 70px;
+}
+
+
+
+
+
+
+.listaContenido{
+list-style: none;
+display: block;
+
+}
+
+.titleModulos{
+
+	margin-top: 0;font-size: 30px;
+margin-bottom: 10.5px;
+font-family: inherit;
+font-weight: 300;
+line-height: 1.1;
+color: #1ca8dd;
+}
+
+.parrafoModulo{
+	color:white;
+	font-size: 20px;
+	margin-bottom: 22px;
+font-weight: 300;
+line-height: 1.5;
+margin: 0 0 11px;
+text-align: justify;
+}
+
+.imgMVC2{
+align:center; 
+width: 250px;
+height: 250px;
+}
+
+.imgRequisitos{
+	width: 60px;
+	height: 40px;
+
+}
+
+.parrafoModulo2{
+	color:#4296EC;
+	font-size: 15px;
+	margin-bottom: 22px;
+font-weight: 300;
+line-height: 1.5;
+margin: 0 0 11px;
+text-align: justify;
+}
+
+.titleModulos2{
+
+	margin-top: 0;font-size: 30px;
+margin-bottom: 10.5px;
+font-family: inherit;
+font-weight: 300;
+line-height: 1.1;
+color:#C91E6A;
+font-size: 25px;
+}
+
+.imgInstalacion{
+	align:center; 
+	max-width: 100%;
+	height: 250px;
+
+
+}
+
+.imgAdministrarAcciones{
+	align:center; 
+	max-width: 100%;
+	height: 200px;
+
+}
+.imgListarAcciones{
+	align:center; 
+	max-width: 100%;
+	height: 280px;
+
+}
+
+.paso{
+	color:#2BC15D	;
+
+}
+
+.subTitleModulos{
+margin-top: 0;font-size: 30px;
+font-family: inherit;
+color: #41AB83;
+font-size: 30px;
+}
+
+.imgAgregarAcciones{
+
+		align:center; 
+	max-width: 100%;
+	height: 250px;
+}
+.parrafoModulo3{
+	color:white;
+	font-size: 15px;
+	margin-bottom: 22px;
+font-weight: 300;
+line-height: 1.5;
+margin: 0 0 11px;
+text-align: justify;
+
+}
+
+.imgLlenarAcciones{
+	align:center; 
+	max-width: 100%;
+	height: 300px;
+
+}
+
+#listaContenido-desarrolladores{
+color: #536570;
+
+display: block;
+padding: 2px 10px 2px 10px;
+text-decoration: none;
+background-color: transparent;
+font-size: 13px;
+	
+}
+
+
+.imgIconoMVC{
+
+width: 40px;
+	height: 30px;
+top:100px;
+}
+
+#nav{
+	position: fixed;
+	background-color: transparent;
+	width: 101%;
+	z-index: 100;
+}

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+		<head>
+		{% block head %}
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="MVC RIVERO">
+			<link rel="shortcut icon" href="recursos/assets/ico/favicon.ico">
+			
+				<title>{% block titulo %}
+							{%if (instalacion.obtenerNombreAplicacion != false)%} 
+									{{  instalacion.obtenerNombreAplicacion}}
+							{% else %}
+								MvcRivero
+							{% endif %} 
+						{% endblock %}
+
+				</title>
+			
+			
+			{% block headBase %}
+				<input type="hidden" id="nombreAplicacionLogin" value=" {{  instalacion.obtenerNombreAplicacion}}">
+				</input>
+				<input type="hidden" id="usuariosBD" value="{{usuBD}}">
+				</input>
+				<!-- Bootstrap core CSS -->
+				
+				<link href="recursos/assets/css/bootstrap.css" rel="stylesheet">
+				<link href="recursos/assets/css/bootstrap-switch.min.css" rel="stylesheet">
+				<link href="recursos/select/bootstrap-select.css" rel="stylesheet">
+				
+				<link href="recursos/date/bootstrap-datetimepicker.css" rel="stylesheet">
+								
+				<link rel="stylesheet" href="recursos/assets/css/font-awesome.min.css">
+
+				<link rel="stylesheet" href="recursos/jqueryUI/jquery-ui.css">
+
+				<link rel="stylesheet" href="recursos/jqueryUI/bootstrapUI.css">
+							
+				<link href="recursos/assets/css/main.css" rel="stylesheet">
+				
+				<link href="modulos/principal/vista/html5/css/estilo.css" rel="stylesheet">
+				<script src="modulos/login/vista/html5/javascript/Login.js"> </script>
+		
+
+				<script src="recursos/assets/js/jquery.min.js"></script>
+		
+				<script src="recursos/assets/js/classie.js"></script>
+				<script src="recursos/assets/js/bootstrap.min.js"></script>
+				<script src="recursos/assets/js/bootstrap-switch.min.js"></script>
+				<script src="modulos/error/vista/html5/js/error.js"></script>
+
+				<script src="recursos/jqueryUI/jquery-ui.js"></script>
+
+				<script src="recursos/date/moment.js"></script>
+				<script src="recursos/date/bootstrap-datetimepicker.js"></script>
+				
+				<script src="recursos/select/bootstrap-select.js"></script>
+
+
+				{% block AdmPermisos %}
+					<script src="modulos/accion/vista/html5/javascript/Accion.js"></script>
+					<script src="modulos/modulo/vista/html5/javascript/Modulo.js"></script>
+					<script src="modulos/tabla/vista/html5/javascript/Tabla.js"></script>
+					<link rel="stylesheet" type="text/css" href="modulos/accion/vista/html5/css/Accion.css">
+				{% endblock %}
+			{% endblock %}
+			
+			{% block headModulo %}
+			{% endblock %}
+			
+			{% block headVista %}
+			{% endblock %}
+
+
+		{% endblock %}
+	
+		</head>
+	
+			<body data-spy="scroll" data-offset="0" data-target="#theMenu">
+    		
+    		{% block body %}
+			{% block menuDerecho %}
+
+
+			<!-- Menu -->
+			<nav class="menu" id="theMenu">
+			<div class="menu-wrap">
+
+				<h1 class="logo1"><a href="index.php">{%if (instalacion.obtenerAbreviacionAplicacion != false)%} 
+							{{  instalacion.obtenerAbreviacionAplicacion}}
+						{% else %}
+							MvcRivero
+						{% endif %} </a></h1>
+				<h1>Formato menu lateral derecha </h1>
+				<i class="icon-remove menu-close"></i>
+				<a href="#about" class="smoothScroll">Personas</a>
+				<a href="index.php?m_modulo=curso&m_formato=html5&m_accion=listar&m_vista=Listar" class="smoothScroll">Curso</a>
+				<a href="#contact" class="smoothScroll">Mensajes</a>
+				<a href="" class="smoothScroll">Acerca de</a>
+			
+				<form id="patronB" action="" method="GET">
+					<h2 class="logo"><a>BUSCARDOR</a></h2>
+					<input type="text" id='buscadorG'
+									class="form-control buscadorP" 
+									placeholder="Introduzca patrón de búsqueda"
+									onkeyup="buscarListar(this.value)"
+									size="50"
+									>
+				</form>
+				<h1 class="logo"><a>REPORTES</a></h1>
+				<a href="" class="smoothScroll">Listados</a>
+				<a href="" class="smoothScroll">PDF</a>
+			</div>
+			<!-- Menu button -->
+			<div id="menuToggle"><i class="icon-reorder"></i></div>
+			</nav>
+		{% endblock %}
+
+	<!-- MENU DE LOGIN -->
+		{% block menuIzquierdo %}
+			<nav class="menuL" id="theMenuL">
+			<div class="menu-wrapL">
+				<i class="icon-remove menu-closeL"></i>
+				<h1 class="logo"><a>Menú 1</a></h1>
+				<h1>Formato menú lateral izquierdo </h1>
+				<a href="#about" class="smoothScroll">Contraseña</a>
+				<a href="#portfolio" class="smoothScroll">Errores</a>
+				<a href="#contact" class="smoothScroll">Auditoria</a>
+				<a href="#contact" class="smoothScroll">Auditoria</a>
+			</div>
+		
+					<!-- Menu button -->
+				<div id="menuToggleL">
+					<i class="icon-info"></i>
+				</div>
+			</nav>
+		{% endblock %}
+	<!-- ******************************** -->
+	{% block menuSuperior %}
+		<nav class="navbar navbar-inverse  navbar-fixed-top" id="menPrincipal" role="navigation">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="icon-bar"></span>	
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+<!--
+					<img src="recursos/imgPropias/iconos/Log.png" style="width:60px;height:35px;position:absolute;top:10px;left:-10px;"></img>
+-->						
+						<a class="navbar-brand" href="index.php">
+							{%if (instalacion.obtenerAbreviacionAplicacion != false)%} 
+								{{  instalacion.obtenerAbreviacionAplicacion}}
+							{% else %}
+								MvcRivero
+							{% endif %} 
+						</a>
+					
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							
+								<li id="menuS" class="dropdown">
+									<a href='' class="dropdown-toggle" data-toggle="dropdown">Menú<span class="caret"></span></a>
+									<ul id="menuS2" class="dropdown-menu" role="menu">
+								
+							
+										{% if (login != null) %} 
+											<li><a href="index.php?m_modulo=instituto&m_formato=html5&m_accion=listar&m_vista=Listar">Institutos</a></li>
+										{% endif %} 
+									</ul>
+								</li>
+							
+							
+								<li class="dropdown">
+									<a href='' class="dropdown-toggle" data-toggle="dropdown">Errores<span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+										{% if (login != null) %} 	
+											<li><a href="javascript:reportarError()">Reportar error</a></li>
+											<li><a href="javascript:verErrores()">Ver errores</a></li>	
+										{% endif %}
+									</ul>
+								</li>
+							
+
+							<li class="dropdown">
+								<a href="#" id="notificacion" class="dropdown-toggle" data-toggle="dropdown">Notificaciones 
+									
+								</a>
+								<ul class="dropdown-menu" role="menu" id="notMensaje">
+									
+								</ul>
+							</li>
+							
+								<li class="dropdown">
+									<a href='' class="dropdown-toggle" data-toggle="dropdown">Permisología<span class="caret"></span></a>
+									<ul class="dropdown-menu" id="menuMVC" role="menu">
+										{% if (login != null) %}
+											{% if (login.obtenerPermiso('AccionListar')) %}	
+												<li><a href="index.php?m_modulo=accion&m_formato=html5&m_accion=mostrar&m_vista=Mostrar">Administrar acciones</a></li>
+											{% endif %}
+											{% if (login.obtenerPermiso('TablaListar')) %}	
+												<li><a href="javascript:AbrModTablas()">Administrar tablas</a></li>
+											{% endif %}
+											{% if (login.obtenerPermiso('ModuloListar')) %}	
+												<li><a href="javascript:diaModulo()">Administrar módulos</a></li>
+											{% endif %}
+											{% if (login.obtenerPermiso('UsuarioListar')) %}	
+												<li><a href="index.php?m_modulo=usuario&m_formato=html5&m_accion=filtrar&m_vista=Listar">Administrar usuarios</a></li>
+											{% endif %}
+											{% if (login.obtenerPermiso('AdministrarPrivilegios')) %}	
+												<li><a href="index.php?m_modulo=usuario&m_formato=html5&m_accion=administrarPermisos&m_vista=AdministradorPermisos">Administrar privilegios </a></li>
+											{% endif %}
+										{% endif %}
+									</ul>
+								</li>
+
+							<li>
+								
+								
+									<a href='' class="dropdown-toggle" data-toggle="dropdown">Manuales<span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+												<li><a href="otros/manuales/usuario/index.html" id="manualUsuario" target="_blank" class="dropdown-toggle" >Manual del usuario 
+									
+												</a></li>
+												
+												<li><a href="otros/manuales/programador/index.html" id="manualUsuario" target="_blank" class="dropdown-toggle" >Manual del programador 
+									
+												</a></li>
+
+	
+									</ul>
+							
+							
+						</ul>
+
+					
+						 {% block usuario %}
+
+						<ul id="userD" class="nav navbar-nav navbar-right">
+								{% if (login == null) %}
+								<li id="nombreUsuario" class="dropdown">
+									<a>
+										<button onclick="dialogoSesion()" title="Iniciar Sesión" class="login" data-toggle="modal"   >
+											<i class="icon-off"></i> Iniciar Sesión
+										</button>
+									</a>
+								</li>
+								{% else %}
+								<li id="nombreUsuario" class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Usuario: {{login.obtenerUsuario}} <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+									<li><a  onclick="cerrarSesion()">Salir</a></li>
+								</ul>
+								</li>
+							{% endif %}
+							
+							</ul>
+						{% endblock %}
+						
+
+						
+					</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+	{% endblock %}
+	<!-- ******************************** -->
+	<div class="alerts"><!-- div necesario para notificaciones-->
+	
+	</div>
+		<div id="wrap">
+	{% block contenido %}
+	
+	{% endblock %}
+	</div>
+	{% block desarrolladores %}
+		<footer>
+			<div id="f" class="smoothScroll">
+			<div class="row">
+				<div class="col-md-12">
+					<button class="btn" id="btnD"><span class="glyphicon glyphicon-chevron-up"></span></button>
+				</div>
+			</div>
+				<div class="row" id="desarrolladores">
+				{% block consejos %}
+					<div class="row" >
+	    <div class="row">
+	    	<div class="col-lg-12" >
+	    		<h2 class="titleModulos">Desarrolladores</h2>
+	    			<hr>
+	    	</div>
+	    </div>
+	    <div class="row desa" >
+	    	<div class="col-lg-3 desa" >
+	    			
+	    	</div>
+	    	<div class="col-lg-2" >
+	    		<div class="row desa">
+		     		<div class="col-lg-12 mvcriveroProfile" >
+		        		<div class='fondoMVC' style="background-image: url('otros/manuales/usuario/img/fondoGera.jpg');"></div>
+		        		<div class="informacion">
+		        			<a href="#"> 
+		        				<img class="imgProfile" src="otros/manuales/usuario/img/geraldine.jpg">
+		        			</a>
+		       				<h5 class="nombreProfile"> Geraldine Castillo</h5>
+		       				<p class="descripcionProfile"> Ing. Infomática, diseñadora  y desarrolladora del framework MVCRivero</p>
+		       				<a  href="https://github.com/geraldineC"><img class="imgGit"src="otros/manuales/usuario/img/git.png"> </a>
+		       				<a  href="geralcs94@gmail.com"><img class="imgGit"src="otros/manuales/usuario/img/Gmail.png"> </a>
+		       				<a  href="https://www.facebook.com/geraldine.castillo.7?fref=nf"><img class="imgGit"src="otros/manuales/usuario/img/facebook.png"> </a>
+		        		</div>
+		      		</div>
+		      	</div>
+	    	</div>
+	    	<div class="col-lg-2" >
+	    		<div class="row desa">
+		  			<div class="col-lg-12 mvcriveroProfile" >
+		        		<div class='fondoMVC' style="background-image: url('otros/manuales/usuario/img/fondoJhonny.jpg');"></div>
+		        			<div class="informacion">
+		        				<a href="#"> 
+		    						<img class="imgProfile" src="otros/manuales/usuario/img/jhonny.jpg">
+		       					</a>
+		    					<h5 class="nombreProfile"> Jhonny Vielma</h5>
+		   						<p class="descripcionProfile"> Ing. Infomática, diseñador  y desarrollador del framework MVCRivero </p>
+   								<a  href="https://github.com/jhonnyVi"><img class="imgGit"src="otros/manuales/usuario/img/git.png"> </a>
+		        				<a  href="jhonnyvq1@gmail.com"><img class="imgGit"src="otros/manuales/usuario/img/Gmail.png"> </a>
+		        				<a  href="https://www.facebook.com/jhonny.vielma.14"><img class="imgGit"src="otros/manuales/usuario/img/facebook.png"> </a>
+		        			</div>
+		      		</div>
+		      	</div>
+	    	</div>
+	    	<div class="col-lg-2" >
+	    		<div class="row desa">
+		      		<div class="col-lg-12 mvcriveroProfile" >
+		        		<div class='fondoMVC' style="background-image: url('otros/manuales/usuario/img/fondoAlamo.jpg');"></div>
+		        		<div class="informacion">
+		        			<a href="#"> 
+		        				<img class="imgProfile" src="otros/manuales/usuario/img/alamo.jpg">
+		        			</a>
+		        			<h5 class="nombreProfile"> Johán Álamo</h5>
+		        			<p class="descripcionProfile"> Ing. Infomática, diseñador, fundador y tutor académico de MVCRivero </p>
+		        			<a  href="https://github.com/johanalamo/MVCRivero_v2"><img class="imgGit"src="otros/manuales/usuario/img/git.png"></a>
+		       				<a  href="johan.alamo@gmail.com"><img class="imgGit"src="otros/manuales/usuario/img/Gmail.png"> </a>
+		        			<a  href="https://www.facebook.com/johan.alamo?fref=ts"><img class="imgGit"src="otros/manuales/usuario/img/facebook.png"> </a>
+		        		</div>
+		      		</div>
+		    	</div>
+	    	</div>
+	    </div>
+	</div>	
+				{% endblock %}
+				</div>
+			</div>
+		</footer>
+	{% endblock %}
+				
+				<script src="recursos/assets/js/main.js"></script>
+				<script src="recursos/javascript/LibreriaMVC.js"></script>
+				<script src="recursos/javascript/validaciones.js"></script>
+				<script type="text/javascript">  {{ login.obtenerPermisosJavascript('Permisos') }} </script>
+
+	{% endblock %}
+
+	</body>
+	
+	</html>

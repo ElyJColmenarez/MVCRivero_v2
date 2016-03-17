@@ -1,0 +1,187 @@
+{% extends 'Base.html.twig' %}
+
+{% block headModulo %}
+	<link rel="stylesheet" href="modulos/principal/vista/html5/css/estilo.css">
+	<script type="text/javascript" src="modulos/principal/vista/html5/javascript/principal.js"></script>
+{% endblock %}
+
+{% block contenido %}
+
+	<div id="Carousel" class="carousel slide">
+
+        <ol class="carousel-indicators">
+            <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#Carousel" data-slide-to="1"></li>
+            <li data-target="#Carousel" data-slide-to="2"></li>
+            <li data-target="#Carousel" data-slide-to="3"></li>
+            <li data-target="#Carousel" data-slide-to="4"></li>
+	        <li data-target="#Carousel" data-slide-to="5"></li>
+            <li data-target="#Carousel" data-slide-to="6"></li>
+            <li data-target="#Carousel" data-slide-to="7"></li>
+            <li data-target="#Carousel" data-slide-to="8"></li>
+        </ol>
+       
+        <div class="carousel-inner">
+            <div class="item">
+                <img src="recursos/imgPropias/fotos/foto.jpg" >
+                <div class="carousel-caption">
+                     <h1>MOTOR DE PLANTILLAS TWIG</h1>
+                      <img class="dentro" src="recursos/imgPropias/fotos/twig.png" width="400" height="400" >
+                      <h2>Potente motor de plantillas libre para el lenguaje PHP.</h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="recursos/imgPropias/fotos/boost.jpg" >
+                <div class="carousel-caption">
+                    <h1>FRAMEWORK BOOTSTRAP</h1>
+                    <img class="dentro" src="recursos/imgPropias/fotos/boost.png" width="400" height="400" >
+                    <h2>Incorporado con el framework CSS mas popular del mercado, realiza tus diseños 
+                        más rápidos.</h2>
+                </div>
+            </div>
+            <div class="item active">
+                 <img src="recursos/imgPropias/fotos/foto.jpg" >
+                <div class="carousel-caption">
+                    <h1>MvcRivero</h1>
+                    <img class="dentro" src="recursos/imgPropias/fotos/mvc2.png" width="400" height="400" >
+                    <h2>MVC moderno y desarrollado para cumplir expectativas de proyectos grandes y robustos</h2>
+                </div>
+            </div>
+             <div class="item">
+                 <img src="recursos/imgPropias/fotos/foto.jpg" >
+                <div class="carousel-caption">
+                    <h1>AjaxMcv</h1>
+                    <img class="dentro" src="recursos/imgPropias/fotos/ajax.png" width="400" height="400" >
+                    <h2>Realiza tus peticiones ajax de una manera fácil y sencilla con la variable ajaxMvc
+                        adaptada a la estructura de MVCRIVERO</h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="recursos/imgPropias/fotos/foto.jpg" >
+                <div class="carousel-caption">
+                     <h1>USUARIOS DE BASE DE DATOS</h1>
+                    <img class="dentro" src="recursos/imgPropias/fotos/baseDatosUsuarios.png" width="400" height="400">
+                    <h2>Usuarios de base de datos lo cual hace más  segura la aplicación</h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="recursos/imgPropias/fotos/foto.jpg" >
+                <div class="carousel-caption">
+                     <h1>COMUNICACIÓN CLIENTE SERVIDOR</h1>
+                     <img class="dentro" src="recursos/imgPropias/fotos/vista.png" width="400" height="400">
+                     <h2>Clase Vista para cumplir con peticiones en diferentes formatos: HTLM5,
+                        JSON,PDF,ODT,TXT....</h2>
+                </div>
+            </div>
+	   <div class="item">
+                <img src="recursos/imgPropias/fotos/foto.jpg" >
+                <div class="carousel-caption">
+                     <h1>CREACIÓN DE LA APLICACIÓN</h1>
+                     <img class="dentro" src="recursos/imgPropias/fotos/creacion.png"width="400" height="400" >
+                     <h2>Intuitiva y fácil creación de la aplicación</h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="recursos/imgPropias/fotos/foto.jpg" >
+                <div class="carousel-caption">
+                     <h1>MANEJO DE ERRORES</h1>
+                     <img class="dentro" src="recursos/imgPropias/fotos/errores.png" width="400" height="400" >
+                     <h2>Completo manejos de errores el cual permite reportar, listar, modificar, eliminar cualquier tipo de errores ocurrido en el sistema. </h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="recursos/imgPropias/fotos/foto.jpg" >
+                <div class="carousel-caption">
+                     <h1>NOTIFICACIONES</h1>
+                     <img class="dentro" src="recursos/imgPropias/fotos/notificaciones.jpg"  >
+                     <h2>Fácil y excelente manejo de notificaciones y comunicación con el usuario. </h2>
+                </div>
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#Carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#Carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+{% endblock %}
+
+{% block desarrolladores %}
+	<div id="footer">	
+		<div id="f" class="smoothScroll" style="bottom:0px">
+		<div class="row">
+			<div class="col-md-12">
+				<button class="btn" id="btnD"><span class="glyphicon glyphicon-chevron-up"></span></button>
+			</div>
+		</div>
+			<div class="row" id="desarrolladores">
+				<div class="row" >
+      <div class="row">
+        <div class="col-lg-12" >
+          <h2 class="titleModulos">Desarrolladores</h2>
+            <hr>
+        </div>
+      </div>
+      <div class="row desa" >
+        <div class="col-lg-3 desa" >
+            
+        </div>
+        <div class="col-lg-2" >
+          <div class="row desa">
+            <div class="col-lg-12 mvcriveroProfile" >
+                <div class='fondoMVC' style="background-image: url('otros/manuales/usuario/img/fondoGera.jpg');"></div>
+                <div class="informacion">
+                  <a href="#"> 
+                    <img class="imgProfile" src="otros/manuales/usuario/img/geraldine.jpg">
+                  </a>
+                  <h5 class="nombreProfile"> Geraldine Castillo</h5>
+                  <p class="descripcionProfile"> Ing. Infomática, diseñadora  y desarrolladora del framework MVCRivero</p>
+                  <a  href="https://github.com/geraldineC"><img class="imgGit"src="otros/manuales/usuario/img/git.png"> </a>
+                  <a  href="geralcs94@gmail.com"><img class="imgGit"src="otros/manuales/usuario/img/Gmail.png"> </a>
+                  <a  href="https://www.facebook.com/geraldine.castillo.7?fref=nf"><img class="imgGit"src="otros/manuales/usuario/img/facebook.png"> </a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-2" >
+          <div class="row desa">
+            <div class="col-lg-12 mvcriveroProfile" >
+                <div class='fondoMVC' style="background-image: url('otros/manuales/usuario/img/fondoJhonny.jpg');"></div>
+                  <div class="informacion">
+                    <a href="#"> 
+                    <img class="imgProfile" src="otros/manuales/usuario/img/jhonny.jpg">
+                    </a>
+                  <h5 class="nombreProfile"> Jhonny Vielma</h5>
+                  <p class="descripcionProfile"> Ing. Infomática, diseñador  y desarrollador del framework MVCRivero </p>
+                  <a  href="https://github.com/jhonnyVi"><img class="imgGit"src="otros/manuales/usuario/img/git.png"> </a>
+                    <a  href="jhonnyvq1@gmail.com"><img class="imgGit"src="otros/manuales/usuario/img/Gmail.png"> </a>
+                    <a  href="https://www.facebook.com/jhonny.vielma.14"><img class="imgGit"src="otros/manuales/usuario/img/facebook.png"> </a>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-lg-2" >
+          <div class="row desa">
+              <div class="col-lg-12 mvcriveroProfile" >
+                <div class='fondoMVC' style="background-image: url('otros/manuales/usuario/img/fondoAlamo.jpg');"></div>
+                <div class="informacion">
+                  <a href="#"> 
+                    <img class="imgProfile" src="otros/manuales/usuario/img/alamo.jpg">
+                  </a>
+                  <h5 class="nombreProfile"> Johán Álamo</h5>
+                  <p class="descripcionProfile"> Ing. Infomática, diseñador, fundador y tutor académico de MVCRivero </p>
+                  <a  href="https://github.com/johanalamo/MVCRivero_v2"><img class="imgGit"src="otros/manuales/usuario/img/git.png"></a>
+                  <a  href="johan.alamo@gmail.com"><img class="imgGit"src="otros/manuales/usuario/img/Gmail.png"> </a>
+                  <a  href="https://www.facebook.com/johan.alamo?fref=ts"><img class="imgGit"src="otros/manuales/usuario/img/facebook.png"> </a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>  
+			</div>
+		</div>
+	</div>
+{% endblock %}

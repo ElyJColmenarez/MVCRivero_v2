@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="MVC RIVERO">
+
+		<link rel="shortcut icon" href="img/mvc2.ico">
+		<title>Manual de usuario MVCRIVERO </title>
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/jquery-ui.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<script src="js/jquery.min.js"></script> 
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/main.js"></script>
+
+
+	</head>
+	<body>
+
+		<div class="row" id="imgPrincipal" style="background-image: url('img/3.jpg');" >
+		<!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQQQQQQQQQQQQQQQQQQQQQQUUUUUUUUUUUUIIIIIIIIIIIIIIIIIII -->
+
+			<nav id="nav" class="navbar navbar-default">
+  				<div class="container-fluid">
+   				 <!-- Brand and toggle get grouped for better mobile display -->
+    				<div class="navbar-header">
+      					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        					<span class="sr-only">Toggle navigation</span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+        					<span class="icon-bar"></span>
+      					</button>
+      					<a class="navbar-brand" href="#"><img class="img-circle imgIconoMVC" src="img/mvc2.png"> </a>
+    				</div>
+
+    				<!-- Collect the nav links, forms, and other content for toggling -->
+    				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     					<ul class="nav navbar-nav">
+       						<li><a class="colorTexto" href="#introduccion">Introducción </a></li>
+        					<li><a class="colorTexto" href="#requisitosMinimos">Requisitos mínimos</a></li>
+        					<li id="dAccionH"  class="dropdown">
+          						<a id="dAccion"   href="#" class="dropdown-toggle colorTexto" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acción <span class="caret"></span></a>
+          						<ul class="dropdown-menu">
+            						<li><a class="colorTexto" href="#accion">Administrar acción</a></li>
+            						<li><a class="colorTexto" href="#agregarAccion">Agregar acción</a></li>
+            						<li><a class="colorTexto" href="#modificarAccion">Modificar acción</a></li>
+            						<li><a class="colorTexto" href="#eliminarAccion">Eliminar acción</a></li>
+         						</ul>
+        					</li>
+     					</ul>
+     					<ul class="nav navbar-nav">
+        					<li  id="dTablaH"class="dropdown">
+          						<a  id="dTabla" href="#" class="dropdown-toggle colorTexto" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tabla <span class="caret"></span></a>
+          						<ul class="dropdown-menu">
+            						<li><a class="colorTexto"href="#tabla">Administrar tabla</a></li>
+            						<li><a class="colorTexto"href="#agregarTabla">Agregar tabla</a></li>
+            						<li><a class="colorTexto"href="#modificarTabla">Modificar tabla</a></li>
+            						<li><a class="colorTexto"href="#eliminarTabla">Eliminar tabla</a></li>
+         						</ul>
+        					</li>
+     					</ul>
+     					<ul class="nav navbar-nav">
+        					<li id="dModuloH"class="dropdown">
+          						<a id="dModulo" href="#" class="dropdown-toggle colorTexto" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Módulo <span class="caret"></span></a>
+          						<ul class="dropdown-menu">
+            						<li><a class="colorTexto"href="#modulo">Administrar módulo</a></li>
+            						<li><a class="colorTexto"href="#agregarModulo">Agregar módulo</a></li>
+            						<li><a class="colorTexto"href="#modificarModulo">Modificar módulo</a></li>
+            						<li><a class="colorTexto"href="#eliminarModulo">Eliminar módulo</a></li>
+         						</ul>
+        					</li>
+     					</ul>
+
+     					<ul class="nav navbar-nav">
+        					<li id="dUsuarioH"class="dropdown">
+          						<a id="dUsuario"href="#" class="dropdown-toggle colorTexto" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuario y roles <span class="caret"></span></a>
+          						<ul class="dropdown-menu">
+            						<li><a class="colorTexto"href="#usuario">Administrar usuario y roles</a></li>
+            						<li><a class="colorTexto"href="#agregarUsuario">Agregar usuario y roles</a></li>
+            						<li><a class="colorTexto"href="#modificarUsuario">Modificar usuario Y roles</a></li>
+            						<li><a class="colorTexto"href="#eliminarUsuario">Eliminar usuario y roles</a></li>
+         						</ul>
+        					</li>
+     					</ul>
+
+     					<ul class="nav navbar-nav">
+        					<li id="dPrivilegiosH" class="dropdown">
+          						<a id="dPrivilegios" href="#" class="dropdown-toggle colorTexto" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Privilegios <span class="caret"></span></a>
+          						<ul class="dropdown-menu">
+            						<li><a class="colorTexto"href="#privilegio">Administrar privilegìos</a></li>
+            						<li><a class="colorTexto"href="#otorgarPrivilegio">Otorgar privilegìos</a></li>
+            						<li><a class="colorTexto"href="#revocarPrivilegio">Revocar privilegìos</a></li>
+            						<li><a class="colorTexto"href="#clonarPrivilegios">Clonar privilegios</a></li>
+         						</ul>
+        					</li>
+        					
+     					</ul>
+
+
+
+      					
+      					<ul class="nav navbar-nav navbar-right">
+        					<li><a class="colorTexto" href="#desarrolladores">Desarrolladores</a></li>
+     					 </ul>
+   					</div><!-- /.navbar-collapse -->
+  				</div><!-- /.container-fluid -->
+			</nav>
+
+
+
+
+		<!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQQQQQQQQQQQQQQQQQQQQQQUUUUUUUUUUUUIIIIIIIIIIIIIIIIIII -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<br>
+			<div class="col-lg-2" >
+      		</div>
+
+      		<div class="col-lg-5" >
+      			<br>
+      			<br>
+      			<br>
+      			<br>
+      			<br>
+      			<br>
+      			<br>
+        			<h1 class="h1Title">Manual de usuario MVCRIVERO</h1> 
+        			<p class="pTitle">Disfrute la experiencia.</p>
+
+        			
+      		</div>
+
+
+
+
+
+		</div>
+
+		<br>
+		<br><br>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-2" >
+					<div class="row" id="mvcRiveroProfile">
+		      			<div class="col-lg-12 mvcriveroProfile" >
+		        			<div class='fondoMVC' style="background-image: url('img/12.png');"></div>
+		        			<div class="informacion">
+		        				<a href="#"> 
+		        				<img class="imgProfile" src="img/mvc2.jpg">
+		        				</a>
+		        				<h5 class="nombreProfile"> MVCRIVERO</h5>
+		        				<p class="descripcionProfile"> Framework desarrollado bajo arquitectura mvc en el cual su fuerte es la permisología </p>
+		        				<a  href="https://github.com/johanalamo/MVCRivero_v2"><img class="imgGit"src="img/git.png">Github </a>
+		        			</div>
+		      			</div>
+		      		
+		    		</div>
+
+    			</div>
+
+
+    			<div class="col-lg-8" >
+					
+	    			<div class="row" id="introduccion">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Introducción</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-7" >
+	    							<p class="parrafoModulo">&nbsp; MVCRivero es un framework desarrollado bajo arquitectura mvc el cual posea una separación del modelo, negocio y vistas comunicándose entre sí a través del controlador. MVCRivero posee
+	    							ciertas clases las cuales ayudarán en el desarrollo, además de su fuerte
+	    							que es la permisología donde se puede usar en su modalidad de un solo usuario para la conexión a base de datos o cada usuario del sistema representará uno en base de datos, al usar el framework usted está brindándole seguridad a sus datos.
+	    							</p>
+	    						</div>
+	    						<div class="col-lg-5">
+	    							<center><img class="imgMVC2"src="img/Mvc.png"></center>
+
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp; Este software es presentado como proyecto de grado para ing. Informática 
+	    							realizado por Geraldine Castillo, Jhonny Vielma y Johán Álamo como tutor acadénico en el I.U.T. Dr Federico Rivero Palacio en Caracas- Venezuela.
+	    							</p>
+	    						</div>
+	    					</div>
+	    			
+		    				
+		    			</div>
+
+	    			</div>
+	    			<br>
+
+	    			<div class="row" id="requisitosMinimos">
+	    				
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Requisitos mínimos</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-7" >
+	    							<p class="parrafoModulo"> &nbsp;&nbsp;Tanto para instalar como para usar el MVCRivero se necesitan 
+	    							ciertos requerimientos que serán mencionados a continuación.
+	    							</p>
+	    							<h5 class="parrafoModulo"> <img class="imgRequisitos" src="img/php.png"> PHP 5 o superior.</h5>
+	    							<h5 class="parrafoModulo"> <img class="imgRequisitos" src="img/apache.png"> Servidor apache.</h5>
+	    							<h5 class="parrafoModulo"> <img class="imgRequisitos" src="img/postgres.png"> Base de datos postgreSQL versión 9.1.</h5>
+	    							<h5 class="parrafoModulo"> <img class="imgRequisitos" src="img/pdo.png"> Clase de conexión a base de datos PDO.</h5>
+	    							<h5 class="parrafoModulo"> <img class="imgRequisitos" src="img/conector.jpg"> Conector de php a postgres.</h5>
+	    							<h5 class="parrafoModulo"> <img class="imgRequisitos" src="img/error.png"> Tener los errores de PHP activados(opcional).</h5>
+	    							<h5 class="parrafoModulo"> <img class="imgRequisitos" src="img/permisos.png"> Poseer permisos de escritura y lectura en WWW.</h5>
+	    							<h5 class="parrafoModulo"> <img class="imgRequisitos" src="img/Tux.png"> Poser servidor en linux(preferiblemente).</h5>
+
+	    						</div>
+
+
+
+	    						<div class="col-lg-5">
+	    						<br><br><br>
+	    							<center><h2 class="titleModulos2">Al instalar </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp; Al momento de instalar el software este comprobará que los requisitos
+	    							estén cumplidos al 100% de resto no procederá a la instalación.
+	    							</p>
+	    							<center><a href="img/instalacion.png"><img class="imgInstalacion"src="img/instalacion.png"></a></center>
+
+	    						</div>
+	    					</div>
+
+
+	    			
+		    				
+		    			</div>
+
+
+	    			</div>
+	    			<br>
+
+	    			<div class="row" id="accion">
+
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Administración de acciones</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-8" >
+	    							<p class="parrafoModulo"> &nbsp;&nbsp;MVCRivero cuenta con una vista en la cual permite a un usuario administrar las acciones(agregar, modificar, listar y eliminar) de los módulos del sistema. Si son usuarios de base de datos permitirá asignar los permisos que posee esta
+	    							acción en ciertas tablas.  
+	    							
+	    							<div class="row">
+	    								<div class="col-lg-6">
+	    							
+	    									<center><h2 class="titleModulos2">¿Qué son acciones? </h2></center>
+	    									<hr>
+	    									<p class="parrafoModulo2">&nbsp;&nbsp; Las acciones son privilegios a funcionalidades del sistema
+	    									como por ejemplo la acción agregarUsuario, permite crear usuarios.
+	    									</p>
+	    								</div>
+	    								<div class="col-lg-6">
+	    							
+	    									<center><h2 class="titleModulos2">Sin usuarios de base de datos</h2></center>
+	    									<hr>
+	    									<p class="parrafoModulo2"> &nbsp;&nbsp;Cuando la configuración elegida es sin usuarios de base de datos no se tendrá la opción de colocar permisos de una acción sobre algunas tablas ya que solo existe un solo usuario para la conexión a la base de datos.
+	    									</p>
+	    								</div>
+
+	    							</div>
+
+
+	    							<div class="row">
+	    								<div class="col-lg-6">
+	    							
+	    									<center><h2 class="titleModulos2">¿Cómo acceder? </h2></center>
+	    									<hr>
+	    									<p class="parrafoModulo2">&nbsp;&nbsp; Para poder acceder a la pantalla donde se encuentra la
+	    									administración de acciones, el usuario debe poseer mínimo el permiso o privilegio
+	    									de listar acciones y de poseerlo en el menú superior se encontrará la opción de permisología, 
+	    									se pasa el cursor en esta opción y se desplegará una lista en la cual se encontrará administrar acciones.
+	    									</p>
+	    								</div>
+	    								<div class="col-lg-6">
+	    									<br><br><br>
+	    									<center><a href="img/administarAcciones.png"><img class="imgAdministrarAcciones"src="img/administarAcciones.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+	    									
+	    									
+	    								</div>
+
+	    							</div>
+
+
+	    						</div>
+	    						<br>
+	    						<div class="col-lg-4">
+	    							
+	    							<center><h2 class="titleModulos2">Usuarios base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2"> &nbsp;&nbsp;Dependiendo de la configuración de la aplicación en los 
+	    							usuarios, si son de base de datos se debe colocar los permisos que tiene una acción sobre una o varias tablas.
+	    							</p>
+
+	    							<br><br><br>
+
+	    							<center><a href="img/listaAcciones.png"><img class="imgListarAcciones"src="img/listaAcciones.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+	    						</div>
+
+	    						
+	    					</div>
+
+
+	    			
+		    				
+		    			</div>
+
+
+	    			</div>
+
+	    			<br>
+	    			<div class="row" id="agregarAccion">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Agregar Acción</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp; Esta opción permite agregar una acción de un módulo en la base de datos si se tiene el permiso. Le explicaremos paso a paso como agregar una acción.
+	    							</p>
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+
+	    						<div class="col-lg-12" >
+	    							<center><h2 class="subTitleModulos">Paso 1(seleccionar agregar)</h2></center>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Sin usuarios de base de datos</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Debe seleccionar el botón verde con el signo de + que se encuentra por encima de la lista de acciones y se desplegará los campos de nombre, descripción y una 
+	    							lista de módulos para seleccionar al cual pertenece la acción.
+	   								</p>
+	   								<br>
+	   								<div class="row">
+		    							<div class="col-lg-6">
+		    								<center><a href="img/botonAgregarAccion.png"><img class="imgAgregarAcciones"src="img/botonAgregarAccion.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							<div class="col-lg-6">
+		    								<center><a href="img/agregarAccionNormal.png"><img class="imgAgregarAcciones"src="img/agregarAccionNormal.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+	    								</div>
+	    						
+	    							</div>
+
+	    						</div>
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2"> &nbsp;&nbsp;Debe seleccionar el botón verde con el signo de + que se encuentra por encima de la lista de acciones y se desplegará los campos de nombre, descripción y una 
+	    							lista de módulos para seleccionar al cual pertenece.
+	    							&nbsp;&nbsp;Una lista de tablas en las cual se asociará los privilegios de esta sobre una o varias tablas de la base de datos, por ejemplo insert, delete, update o select.
+	   								</p>
+	   								<div class="row">
+		    							<div class="col-lg-6">
+		    								<center><a href="img/botonAgregarAccion.png"><img class="imgAgregarAcciones"src="img/botonAgregarAccion.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							<div class="col-lg-6">
+		    								<center><a href="img/agregarAccionBD.png"><img class="imgAgregarAcciones"src="img/agregarAccionBD.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+	    								</div>
+	    						
+	    							</div>
+
+	    						</div>
+	    						
+	    					</div>
+	    					<br>
+	    					<div class="row">
+
+	    						<div class="col-lg-12" >
+	    							<center><h2 class="subTitleModulos">Paso 2(llenar campos)</h2></center>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Sin usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2"> &nbsp;&nbsp;En este paso se procederá a llenar los campos que posee la acción.
+	   								</p>
+	    							<p class="parrafoModulo3"> <span class="label label-primary">Nombre</span> : Ingresa el nombre de la acción a agregar.
+	   								</p>
+	   								<p class="parrafoModulo3"><span class="label label-success">Descripción</span> : Ingresa alguna descripción de la acción.
+	   								</p>
+	   								<p class="parrafoModulo3"> <span class="label label-info">Módulo</span>: Selecciona el módulo al cual pertenece la acción, si pertenece a alguno.
+	   								</p>
+	   								<br>
+	   								<div class="row">
+		    							<div class="col-lg-12">
+		    								<center><a href="img/agregarDatosAccionNormal.png"><img class="imgLlenarAcciones"src="img/agregarDatosAccionNormal.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							
+	    						
+	    							</div>
+
+	    						</div>
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; En este paso se procederá a llenar los campos que posee la acción.
+	   								</p>
+	   								<p class="parrafoModulo3"> <span class="label label-primary">Nombre</span> : Ingresa el nombre de la acción.
+	   								</p>
+	   								<p class="parrafoModulo3"><span class="label label-success">Descripción</span> : Ingresa alguna descripción de la acción.
+	   								</p>
+	   								<p class="parrafoModulo3"> <span class="label label-info">Módulo</span>: Selecciona el módulo al cual pertenece la acción, si pertenece a alguno.
+
+
+	    							<div class="row">
+		    							<div class="col-lg-12">
+		    								
+			    								<p class="parrafoModulo2"> &nbsp;&nbsp;Luego de haber llenado los campos principales, se procederá a asignarle la permisología de la acción sobre las tablas de la base de datos chequeando el permiso que posee en la tabla.
+		   										</p>
+		   									<center>
+		   										<p class="parrafoModulo3"> <span class="label label-primary">+</span> : Insert. 
+		   										<span class="label label-warning"><i class="glyphicon glyphicon-pencil "></i></span> :Update. 
+		   										
+		   										<span class="label label-danger"><i class="glyphicon glyphicon-remove "></i></span> :Delete. 
+		   										
+		   										<span class="label label-success">S</span> :Select. 
+		   										
+		   										<span class="label label-info">A</span> :Todas. 
+		   										</p>
+		   									</center>
+		    							</div>
+		    							
+	    						
+	    							</div>
+	    							<br>
+	    							<div class="row">
+
+	    							
+		    							<div class="col-lg-6">
+		    								<center><a href="img/llenarDatosAccionBD1.png"><img class="imgAgregarAcciones"src="img/llenarDatosAccionBD1.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							
+	    						
+	    							
+		    							<div class="col-lg-6">
+		    								<center><a href="img/llenarDatosAccionBD2.png"><img class="imgAgregarAcciones"src="img/llenarDatosAccionBD2.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+		    							</div>
+		    							
+	    						
+	    							</div>
+
+
+	    						</div>
+	    						
+	    					</div>
+	    					<br>
+	    					<div class="row">
+
+	    						<div class="col-lg-12" >
+	    							<center><h2 class="subTitleModulos">Paso 3(Guardar)</h2></center>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Sin usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2"> &nbsp;&nbsp;Ya con todos los campos llenos o al menos los requeridos, se procederá a darle click al botón de guardar y esperar el mensaje con la respuestas.
+	   								</p>
+	    						
+	   								<br>
+	   								<div class="row">
+
+	    							
+		    							<div class="col-lg-6">
+		    								<center><a href="img/botonGuardarAccionNormal.png"><img class="imgAgregarAcciones"src="img/botonGuardarAccionNormal.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							
+	    						
+	    							
+		    							<div class="col-lg-6">
+		    								<center><a href="img/mensajeGuardarAccionNormal.png"><img class="imgAgregarAcciones"src="img/mensajeGuardarAccionNormal.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+		    							</div>
+		    							
+	    						
+	    							</div>
+
+	    						</div>
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2"> &nbsp;&nbsp;Ya con todos los campos llenos o almenos los requeridos, se procederá a darle click al botón de guardar y esperar el mensaje con la respuestas.
+	   								</p>
+	   							
+	    						
+	    							<br>
+	    							<div class="row">
+
+	    							
+		    							<div class="col-lg-6">
+		    								<center><a href="img/guardarAccionBD1.png"><img class="imgAgregarAcciones"src="img/guardarAccionBD1.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							
+	    						
+	    							
+		    							<div class="col-lg-6">
+		    								<center><a href="img/mensajeExitoGuardarAccion.png"><img class="imgAgregarAcciones"src="img/mensajeExitoGuardarAccion.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+		    							</div>
+		    							
+	    						
+	    							</div>
+
+
+	    						</div>
+	    						
+	    					</div>
+
+
+
+
+
+
+	    				</div>
+
+
+	    			</div>
+	    			<br>
+	    			<div class="row" id="modificarAccion">
+	    				<div class="col-lg-12">
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Modificar Acción</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp; Esta opción permite modificar una acción de un módulo en la base de datos si se tiene el permiso. Le explicaremos paso a paso como modificar una acción.
+	    							</p>
+	    						</div>
+	    					</div>
+	    					<br>	
+	    					<div class="row">
+
+	    						<div class="col-lg-12" >
+	    							<center><h2 class="subTitleModulos">Paso 1(seleccionar modificar)</h2></center>
+	    						</div>
+	    					</div>
+	    					<div class="row">
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Sin usuarios de base de datos</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Debe posicionar el cursor sobre la acción que desea modificar y seleccionar el ícono con el signo del lápiz de color azul que se encuentra en ella y se desplegarán los campos de nombre, descripción y una lista de módulos.
+	   								</p>
+	   								<br>
+	   								<div class="row">
+		    							<div class="col-lg-6">
+		    								<center><a href="img/botonModificarAccion.png"><img class="imgAgregarAcciones"src="img/botonModificarAccion.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							<div class="col-lg-6">
+		    								<center><a href="img/modificarAccion.png"><img class="imgAgregarAcciones"src="img/modificarAccion.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+	    								</div>
+	    						
+	    							</div>
+
+	    						</div>
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2"> &nbsp;&nbsp;Debe posicionar el cursor sobre la acción que desea modificar y seleccionar el ícono con el signo del lapiz de color azul que se encuentra en ella y se desplegarán los campos de nombre, descripción y una lista de módulos. Aparecerá también una lista de tablas en la cual se encuentran todos los privilegios(Insert, Delete, Update y select) que posee la acción sobre ellas.
+	   								</p>
+	   								<div class="row">
+		    							<div class="col-lg-6">
+		    								<center><a href="img/botonModificarAccion.png"><img class="imgAgregarAcciones"src="img/botonModificarAccion.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							<div class="col-lg-6">
+		    								<center><a href="img/modificarAccionBD.png"><img class="imgAgregarAcciones"src="img/modificarAccionBD.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+	    								</div>
+	    						
+	    							</div>
+
+	    						</div>
+	    						
+	    					</div>
+	    						<br>	
+	    					<div class="row">
+
+	    						<div class="col-lg-12" >
+	    							<center><h2 class="subTitleModulos">Paso 2(cambiar datos)</h2></center>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Sin usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2"> &nbsp;&nbsp;En este paso se procederá a actualizar los campos.
+	   								</p>
+	    							<p class="parrafoModulo3"> <span class="label label-primary">Nombre</span> : Ingresa el nuevo nombre de la acción.
+	   								</p>
+	   								<p class="parrafoModulo3"><span class="label label-success">Descripción</span> : Ingresa la nueva descripción de la acción.
+	   								</p>
+	   								<p class="parrafoModulo3"> <span class="label label-info">Módulo</span>: Selecciona el nuevo módulo al cual pertenecerá la acción, si pertenece a alguno.
+	   								</p>
+	   								<br>
+	   								<div class="row">
+		    							<div class="col-lg-12">
+		    								<center><a href="img/llenarCamposModificarAccion.png"><img class="imgLlenarAcciones"src="img/llenarCamposModificarAccion.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							
+	    						
+	    							</div>
+
+	    						</div>
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; En este paso se procederá a actualizar los datos de la acción así como la permisología que esta posee sobre las tablas.
+	   								</p>
+	   								<p class="parrafoModulo3"> <span class="label label-primary">Nombre</span> :  Ingresa el nuevo nombre de la acción.
+	   								</p>
+	   								<p class="parrafoModulo3"><span class="label label-success">Descripción</span> :Ingresa la nueva descripción de la acción.
+	   								</p>
+	   								<p class="parrafoModulo3"> <span class="label label-info">Módulo</span>: Selecciona el nuevo módulo al cual pertenecerá la acción, si pertenece a alguno.
+
+
+	    							<div class="row">
+		    							<div class="col-lg-12">
+		    								
+			    								<p class="parrafoModulo2"> &nbsp;&nbsp;Se puede modificar la permisología (Insert, Delete, Update y select) que posee la acción sobre las tablas chequeándolas o deschequeándolas.
+		   										</p>
+		   									<center>
+		   										<p class="parrafoModulo3"> <span class="label label-primary">+</span> : Insert. 
+		   										<span class="label label-warning"><i class="glyphicon glyphicon-pencil "></i></span> :Update. 
+		   										
+		   										<span class="label label-danger"><i class="glyphicon glyphicon-remove "></i></span> :Delete. 
+		   										
+		   										<span class="label label-success">S</span> :Select. 
+		   										
+		   										<span class="label label-info">A</span> :Todas. 
+		   										</p>
+		   									</center>
+		    							</div>
+		    							
+	    						
+	    							</div>
+	    							<br>
+	    							<div class="row">
+
+	    							
+		    							<div class="col-lg-12">
+		    								<center><a href="img/llenarCamposModificarAccionBD.png"><img class="imgAgregarAcciones"src="img/llenarCamposModificarAccionBD.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>	
+	    						
+	    							</div>
+
+
+	    						</div>
+	    						
+	    					</div>
+	    					<br>	
+	    					<div class="row">
+
+	    						<div class="col-lg-12" >
+	    							<center><h2 class="subTitleModulos">Paso 3(guardar cambios)</h2></center>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Sin usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp;Con todos los campos modificados se procederá a darle click al botón de guardar y esperar el mensaje con la respuestas, si no hubo
+	    							cambios en los campos de la acción el botón de guardar estará desactivado, éste solo se activará cuando exista algún cambio.
+	   								</p>
+	    						
+	   								<br>
+	   								<div class="row">
+
+	    							
+		    							<div class="col-lg-6">
+		    								<center><a href="img/botonGuardarModificarBD.png"><img class="imgAgregarAcciones"src="img/botonGuardarModificarBD.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							
+	    						
+	    							
+		    							<div class="col-lg-6">
+		    								<center><a href="img/mensajeModificarAccion.png"><img class="imgAgregarAcciones"src="img/mensajeModificarAccion.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+		    							</div>
+		    							
+	    						
+	    							</div>
+
+	    						</div>
+	    						<div class="col-lg-6">
+	    							<center><h2 class="titleModulos2">Usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Con todos los campos modificados o la permisología sobre las tablas se procederá a darle click al botón de guardar y esperar el mensaje con la respuestas, si no hubo cambios en los campos de la acción el botón de guardar estará desactivado, éste solo se activará cuando exista algún cambio.
+	   								</p>
+	   							
+	    						
+	    							<br>
+	    							<div class="row">
+
+	    							
+		    							<div class="col-lg-6">
+		    								<center><a href="img/botonGuardarModificarAccionBD.png"><img class="imgAgregarAcciones"src="img/botonGuardarModificarAccionBD.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+		    							</div>
+		    							
+	    						
+	    							
+		    							<div class="col-lg-6">
+		    								<center><a href="img/mensajeModificarAccionBD.png"><img class="imgAgregarAcciones"src="img/mensajeModificarAccionBD.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+		    							</div>
+		    							
+	    						
+	    							</div>
+
+
+	    						</div>
+	    						
+	    					</div>
+
+
+	    				</div>
+
+	    			</div>
+
+	    			<br>
+	    			<div class="row" id="eliminarAccion">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Eliminar acción</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp; Esta opción permite eliminar una acción que sea de un módulo o no en la base de datos si se tiene el permiso. Le explicaremos lo sencillo que resulta eliminar la acción en tan solo un paso.
+	    							</p>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-6">
+	    							<p class="parrafoModulo2"> &nbsp;&nbsp;Debe posicionar el cursor sobre la acción que desea eliminar y seleccionar el ícono con el signo de X de color rojo que se encuentra en ella. Si la acción no posee ninguna despendencia se eliminará sin ningún problema, ya sea que la aplicación esté trabajando con usuarios
+	    							de base de datos o no, observe las imágenes para más detalle.
+	   								</p>
+	    						</div>
+	    						<div class="col-lg-6">
+	    							<div class="row">
+	    								<div class="col-lg-6">
+	    									<center><a href="img/eliminarAccion.png"><img class="imgAgregarAcciones"src="img/eliminarAccion.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+	    								</div>
+	    								<div class="col-lg-6">
+	    									<center><a href="img/mensajeEliminarAccion.png"><img class="imgAgregarAcciones"src="img/mensajeEliminarAccion.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+	    								</div>
+	    							</div>
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+	    			<br>
+
+	    			<div class="row" id="tabla">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Administración de tabla</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;MVCRivero cuenta con una vista en la cual permite a un usuario administrar las tablas(agregar, modificar, listar y eliminar). 
+	    							&nbsp;&nbsp;Estará disponible solo cuando la aplicación esté trabajando con usuarios de base de datos. 
+	    							</p>
+	    						</div>
+	    					</div>
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<div class="row">
+	    								<div class="col-lg-12">
+	    									<center><h2 class="titleModulos2">¿Qué son tablas? </h2></center>
+	    									<hr>
+	    									<p class="parrafoModulo2">&nbsp;&nbsp; Son todas las tablas que existen en la base de datos de la aplicación.
+	    									</p>
+	    								</div>
+
+	    							</div>
+	    							<div class="row">
+	    								<div class="col-lg-12">
+	    									<center><h2 class="titleModulos2">Tipos de tabla </h2></center>
+	    									<hr>
+	    									<p class="parrafoModulo2">&nbsp;&nbsp; Existen 3 tipos de tablas:
+	    									</p>
+	    									<p class="parrafoModulo3"> <span class="label label-primary">Tablas agregadas</span>:  Son aquellas que existen como tablas en base de datos y están 
+	    									agregadas en per.t_tabla para su administración.
+	   										</p>
+	   										<p class="parrafoModulo3"><span class="label label-danger">Tablas no agregadas</span>: Son aquellas que existen en la base de datos pero no en per.t_tabla
+	   										ya que no han sido cargadas.
+	   										</p>
+	   										<p class="parrafoModulo3"> <span class="label label-warning">Agregadas no existente en BD</span>: Son aquellas que están cargadas en per.t_tabla
+	   										pero no existe ninguna tabla en la base de datos que coincida con este nombre.
+	   										</p>
+	    								</div>
+
+	    							</div>
+	    						</div>
+
+	    						<div class="col-lg-4" >
+	    							<div class="row">
+	    								<div class="col-lg-12">
+	    									<center><h2 class="titleModulos2">¿Cómo acceder? </h2></center>
+	    									<hr>
+	    									<p class="parrafoModulo2">&nbsp;&nbsp;  Para acceder a la pantalla donde se encuentra la administración de tablas el usuario debe poseer mínimo el permiso o privilegio de listar tablas, de poseerlo en el menú superior se encontrará la opción de permisología, se pasa el cursor sobre esta y se desplegará una lista en la cual se encontrará administrar tablas. también al modificar, agregar o clonar una acción se encuentra un botón (de una llave) de administración de tablas en el cual también se puede acceder.
+	    									</p>
+	    								</div>
+
+	    							</div>
+	    							<div class="row">
+	    								<div class="col-lg-12">
+	    									<center><a href="img/administrarTabla.png"><img class="imgAgregarAcciones"src="img/administrarTabla.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 3</h5></center>
+	    								</div>
+
+	    							</div>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<div class="row">
+	    								<div class="col-lg-12">
+	    									<center><a href="img/botonAdministrarTabla2.png"><img class="imgAgregarAcciones"src="img/botonAdministrarTabla2.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+	    								</div>
+	    							
+	    							</div>
+	    							<div class="row">
+	    								<div class="col-lg-12">
+	    									<center><a href="img/botonAdministrarTabla1.png"><img class="imgAgregarAcciones"src="img/botonAdministrarTabla1.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+	    								</div>
+	    							
+	    							</div>
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+
+
+	    			<div class="row" id="agregarTabla">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Agregar tabla</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite agregar una tabla de la base de datos a la tabla per.t_tabla para la administración de la permisología de las acciones sobre ellas, el usuario necesita el permiso de agregar tabla. </p>
+
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Existen 2 maneras de agregar una tabla, se explicarán enseguida. </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-6" >
+	    							<center><h2 class="titleModulos2">Cargando tablas </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Para cargar una tabla en per.t_tabla se posiciona en la lista de tablas no agregadas con el título en rojo,
+	    							 estarán todas las que existen en base de datos, proceder a colocar el cursor sobre la requerida y aparecerá un ícono 
+	    							de una flecha en azul al cual se le da click y se cargará la tabla.
+	    							</p>
+	    							<center><a href="img/cargarTabla.png"><img class="imgAgregarAcciones"src="img/cargarTabla.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+	    						</div>
+	    						<div class="col-lg-6" >
+	    							<center><h2 class="titleModulos2">Arrastrando tabla</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp;  Para cargar una tabla en per.t_tabla se posiciona en la lista de tablas no agregadas con el título en rojo, estarán todas las que existen en base de datos, proceder a colocar el cursor sobre la requerida y arrastrarla hasta la lista de agregas y se cargará la tabla.
+	    							</p>
+	    							<center><a href="img/arrastrarTabla.png"><img class="imgAgregarAcciones"src="img/arrastrarTabla.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+	    						</div>
+
+
+	    					</div>
+	    					<div class="row">
+
+	    						<center><a href="img/mensajeAgregarTabla.png"><img class="imgAgregarAcciones"src="img/mensajeAgregarTabla.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+	    					</div>
+	    				</div>
+	    			</div>
+	    			<br>
+
+	    			<div class="row" id="modificarTabla">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Modificar tabla</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite modificar una tabla, solo se pueden modificar las que se encuentren en la lista de 
+	    							agregadas pero no existente en base de datos. </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-6" >
+	    							<center><h2 class="titleModulos2">Paso 1(seleccionar tabla) </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Se va a la lista de tablas agregadas pero no existente en bd y se coloca el cursor en la tabla que se desea modificar
+	    							y aparecera el ícono de modificar (lápiz azul) y se le da click.
+	    							</p>
+	    							<center><a href="img/botonModificarTabla.png"><img class="imgAgregarAcciones"src="img/botonModificarTabla.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+	    						</div>
+	    						<div class="col-lg-6" >
+	    							<center><h2 class="titleModulos2">Paso 2 (Cambiar nombre)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp;Al dar click al botón de modificar tabla se desplegarán los campos de la tabla para 
+	    							modificar el nombre.
+	    							</p>
+	    							<center><a href="img/modificarTabla.png"><img class="imgAgregarAcciones"src="img/modificarTabla.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<center><h2 class="titleModulos2">Paso 3 (Guardar cambios)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego de haberle modificado el nombre a la tabla se procederá a guardar la información con el botón verde que dice guardar.
+	    							&nbsp;&nbsp;Este botón se activará solo si realizó un cambio en el nombre. Esperar el mensaje con la respuesta.
+	    							</p>
+	    							<div class="row">
+	    								<div class="col-lg-6">
+	    									
+	    									<center><a href="img/botonGuardarTabla.png"><img class="imgAgregarAcciones"src="img/botonGuardarTabla.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+	    								</div>
+
+	    								<div class="col-lg-6">
+	    									<center><a href="img/mensajeTablaGuar.png"><img class="imgAgregarAcciones"src="img/mensajeTablaGuar.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 2</h5></center>
+
+	    								</div>
+
+	    							</div>
+	    							
+	    						</div>
+	    					</div>
+
+
+	    				</div>
+	    			</div>
+
+	    			<br>
+	    			<div class="row" id="eliminarTabla">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Eliminar tabla</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite eliminar una tabla, solo se pueden eliminar las tablas que se encuentren en la lista de 
+	    							agregadas y en la de agregadas pero no existente en base de datos ya que estás son las que se encuentran en per.t_tabla </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-6" >
+	    							<center><h2 class="titleModulos2">Paso 1(seleccionar tabla) </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Se va a la lista de tablas agregadas o a la lista de tablas agregadas pero no existenten en base de datos y se posiciona en cursor en la tabla y aparecerá el ícono con una x de color rojo y se da click.
+	    							</p>
+	    							<center><a href="img/botonEliminarTabla.png"><img class="imgAgregarAcciones"src="img/botonEliminarTabla.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+	    						</div>
+	    						<div class="col-lg-6" >
+	    							<center><h2 class="titleModulos2">Paso 2 (Mensaje al eliminar)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego de haberle dado click al botón de eliminar esperar el mensaje de respuesta.
+	    							</p>
+	    							<center><a href="img/mensajeEliminarTabla.png"><img class="imgAgregarAcciones"src="img/mensajeEliminarTabla.png"></a></center>
+	    									<center><h5 class="paso"> Imagen 1</h5></center>
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+	    			<br>
+
+
+<!--MODULO-MODULO-MOdulo-Modulo-MODULO-MODULO-MODULO-MOdulo-Modulo-MODULO-MODULO-MODULO-MOdulo-Modulo-MODULO-MODULO-MODULO-MOdulo-Modulo-MODULO-MODULO-MODULO-MOdulo-Modulo-MODULO -->
+
+					<div class="row" id="modulo">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Administrar módulo</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;MVCRivero cuenta con una vista en la cual permite a un usuario administrar los módulos (agregar, modificar, listar y eliminar). 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">¿Qué es un módulo? </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Son una referencia al momento de crear una acción, es decir los módulos permite agrupar acciones para un mejor control.
+	    							</p>
+	    						 	<center><a href="img/administrarModulos.png"><img class="imgAgregarAcciones"src="img/administrarModulos.png"></a></center>
+	    									<center><h5 class="paso"> Pantalla de administración de módulos</h5></center>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">¿Por qué usarlo?</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Para llevar un mayor control en las acciones y agruparlas por el módulos al cual pertenecen.
+	    							</p>
+	    							<center><h2 class="titleModulos2">¿Cómo acceder?</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Para acceder a la pantalla donde se encuentra la administración de módulos el usuario debe poseer mínimo el permiso o privilegio de listar módulos y de poseerlo en el menú superior se encontrará la opción de permisología, se pasa el cursor sobre esta y se desplegará una lista en la cual se encontrará administrar módulos o al momento de modificar, agregar o clonar una acción se encuentra un botón (de una llave) de administracion de módulos justamente al lado izquierdo del select de módulos en el cual también se puede acceder . 
+	    							</p>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><a href="img/accederModulos1.png"><img class="imgAgregarAcciones"src="img/accederModulos1.png"></a></center>
+	    									<center><h5 class="paso"> Acceder a administrar módulos 1</h5></center>
+
+	    							<center><a href="img/accederModulos2.png"><img class="imgAgregarAcciones"src="img/accederModulos2.png"></a></center>
+	    									<center><h5 class="paso"> Acceder a administrar módulos 2</h5></center>
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+
+	    			<br>
+
+	    			<div class="row" id="agregarModulo">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Agregar Módulo</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite agregar un módulo en la base de datos si se tiene el permiso. Le explicaremos paso a paso como agregar un módulo. 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 1 (seleccionar agregar) </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp;Estando en la pantalla de administrar módulo como se explicó anteriormente se procede a dar click al ícono de color verde con el signo de + que se encuentra en la parte superior de la lista de módulos y se desplegará una pantalla para llenar los datos del módulo.
+	    							</p>
+	    						 	<center><a href="img/botonAgregarModulo.png"><img class="imgAgregarAcciones"src="img/botonAgregarModulo.png"></a></center>
+	    									<center><h5 class="paso"> Ícono agregar módulo</h5></center>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 2 (Llenar campos)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Se muestra una pantalla con los campos de nombre y descripción, de estos usted debe llenar el campo de nombre obligatoriamente.
+	    							</p>
+	    							<center><a href="img/llenarDatoAgregarModulo.png"><img class="imgAgregarAcciones"src="img/llenarDatoAgregarModulo.png"></a></center>
+	    									<center><h5 class="paso"> Llenar datos de agregar módulo</h5></center>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 3 (Guardar)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego de tener los campos llenos se proceden a guardar con el botón en la parte inferior que dice guardar de color verde y se espera el mensaje de respuesta.
+	    							</p>
+	    							<center><a href="img/botonGuardarAgregarModulo.png"><img class="imgAgregarAcciones"src="img/botonGuardarAgregarModulo.png"></a></center>
+	    									<center><h5 class="paso"> Botón guardar</h5></center>
+	    							<center><a href="img/mensajeAgregarModulo.png"><img class="imgMensaje"src="img/mensajeAgregarModulo.png"></a></center>
+	    									<center><h5 class="paso"> Mensaje servidor</h5></center>
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+
+	    			<br>
+	    			<div class="row" id="modificarModulo">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Modificar Módulo</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite modificar un módulo en la base de datos si se tiene el permiso. Le explicaremos paso a paso como modificar un módulo. 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 1 (seleccionar el módulo a modificar) </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Estando en la pantalla de administrar módulo como se explicó anteriormente se procede a buscar el módulo a modificar ya sea mediante el buscador o scroleando en la lista, cuando se encuentre se coloca el cursor encima del mismo y aparecerá el ícono de modificar (lápiz color azul) y se procede a darle click, se desplegará una pantalla con los datos para su modificación.
+	    							</p>
+	    						 	<center><a href="img/botonModificarModulo.png"><img class="imgAgregarAcciones"src="img/botonModificarModulo.png"></a></center>
+	    									<center><h5 class="paso"> Ícono de modificar módulo</h5></center>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 2 (Cambiar Datos)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Estando en la pantalla con los datos del módulo se procede a cambiar los campos que se necesiten.
+	    							</p>
+	    							<center><a href="img/cambiandoDatosModuloModificar.png"><img class="imgAgregarAcciones"src="img/cambiandoDatosModuloModificar.png"></a></center>
+	    									<center><h5 class="paso"> Cambiando Datos</h5></center>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 3 (Guardar)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego de tener los campos modificados se procede a guardar los datos en el botón de la parte inferior que dice guardar de color verde y se espera el mensaje del servidor, si el botón de guardar está desactivado es que la información no posee ningún cambio.
+	    							</p>
+	    							<center><a href="img/botonGuardarModificarModulo.png"><img class="imgAgregarAcciones"src="img/botonGuardarModificarModulo.png"></a></center>
+	    									<center><h5 class="paso"> Botón guardar</h5></center>
+	    							<center><a href="img/mensajeModuloModificado.png"><img class="imgMensaje"src="img/mensajeModuloModificado.png"></a></center>
+	    									<center><h5 class="paso"> Mensaje del servidor</h5></center>
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+
+
+	    			<br>
+	    			<div class="row" id="eliminarModulo">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Eliminar Módulo</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite eliminar un módulo en la base de datos si se tiene el permiso. Le explicaremos paso a paso como eliminar un módulo. 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 1 (seleccionar módulo a eliminar) </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Estando en la pantalla de administrar módulo como se explicó anteriormente se procede a buscar el módulo a eliminar ya sea mediante el buscador o scroleando en la lista, cuando se encuentre se coloca el cursor sobre él y aparecerá el ícono de eliminar (x color roja) y se procede a darle click y se desplegará una confirmación para preguntar si desea eliminar el módulo se le da click en sí y listo.
+	    							</p>
+	    						 	<center><a href="img/botonEliminarModulo.png"><img class="imgAgregarAcciones"src="img/botonEliminarModulo.png"></a></center>
+	    									<center><h5 class="paso"> Ícono eliminar módulo</h5></center>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 2 (Aceptar la confirmación)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Al haberle dado click a eliminar el módulo se desplegará una confirmación a la cual se le tiene que presionar sí para que elimine el módulo.
+	    							</p>
+	    							<center><a href="img/alertaEliminarModulo.png"><img class="imgAgregarAcciones"src="img/alertaEliminarModulo.png"></a></center>
+	    									<center><h5 class="paso"> Aceptando confirmación</h5></center>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 3 (Respuesta servidor)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Al haber aceptado la confirmación espere la repuesta del servidor.
+	    							</p>
+	    							<center><a href="img/mensajeEliminarModulo.png"><img class="imgAgregarAcciones"src="img/mensajeEliminarModulo.png"></a></center>
+	    									<center><h5 class="paso"> Mensaje de respuesta</h5></center>
+	    							
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+	    			<br>
+<!--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO--USUARIO-->
+
+
+					<div class="row" id="usuario">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Administrar usuario y roles</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp; 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">¿Qué son los usuarios? </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Son los que utilizarán el sistema, el framework al instalarlo creará un usuario administrador que será el creador de la aplicación, mediante este se permitirá crear otros usuarios.
+	    							</p>
+
+	    							<center><h2 class="titleModulos2">¿Qué son los roles? </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Los roles son aquellos "usuarios" que se crean para cargarle una permisología que será utilizada como 
+	    							referencia para clonarsela a usuarios reales. No poseen conexión al sistema.
+	    							</p>
+
+	    							<center><h2 class="titleModulos2">Usuarios vs roles </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Los usuarios pueden iniciar sesión en el sistema y los roles no pueden ya que ellos solo son referencia, un rol no posee permisos de iniciar sesión.
+	    							</p>
+	    							<center><a href="img/rol.png"><img class="imgAgregarAcciones"src="img/rol.png"></a></center>
+	    									<center><h5 class="paso"> Usuarios vs rol</h5></center>
+	    						 
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Usuarios de base de datos</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Si se está utilizando la aplicación con la configuración de usuarios de base de datos, por cada usuario que se cree en la aplicación se guardará uno en base de datos, no se tendrá la contraseña del usuario en ninguna tabla solo el nombre, tipo, campo1,campo2 y campo3 en per.t_usuario.			
+	    							Permitirá manejar el acceso que tendrá sobre la información.
+	    							</p>
+	    							<center><h2 class="titleModulos2">Sin usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Si se está utilizando la aplicación con la configuración sin usuarios de base de datos, el usuario solo se almacenará en la tabla per.t_usuario con su contraseña. Las conexiones a la base de datos serán con el administrador.
+	    							</p>
+	    							<center><a href="administrarUsuarios.png"><img class="imgAgregarAcciones"src="img/administrarUsuarios.png"></a></center>
+	    									<center><h5 class="paso"> Pantalla administrar usuarios </h5></center>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">¿Cómo acceder?</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Para acceder a la pantalla donde se encuentra la administración de usuarios se debe poseer mínimo el permiso o privilegio de listar usuarios, de poseerlo en el menú superior se encontrará la opción de permisología, se pasa el cursor sobre ella y se desplegará una lista en la cual se encontrará administrar usuarios. 
+	    							</p>
+
+	    							<center><a href="img/botonAdministrarUsuarios.png"><img class="imgAgregarAcciones"src="img/botonAdministrarUsuarios.png"></a></center>
+	    									<center><h5 class="paso"> Acceder a administrar usuarios </h5></center>
+
+	    							<center><h2 class="titleModulos2">Importante</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Para una mayor seguridad de su aplicación se recomienda instalar con la configuracion de usuarios de base de datos. 
+	    							</p>
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+					
+	    			<br>
+	    			<div class="row" id="agregarUsuario">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Agregar Usuario</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite agregar un usuario o rol en la base de datos si se tiene el permiso. Le explicaremos paso a paso como agregar un usuario o rol. 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 1 (seleccionar agregar usuario) </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; El usuario debe estar en la pantalla de administrar usuarios, explicada anteriormente como accederla, luego
+	    							se encontrará el ícono con el signo de + de color verde en la parte superior de la lista de usuarios, al darle click se desplegarán los campos.
+	    							</p>
+	    							<center><a href="img/botonAgregarUsuario.png"><img class="imgAgregarAcciones"src="img/botonAgregarUsuario.png"></a></center>
+	    									<center><h5 class="paso"> Ícono Agregar Usuario</h5></center>
+
+
+	    					
+	    						 
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 2 (Llenar campos)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Se mostrarán los campos (usuario, tipo, campo1,campo2 y campo3) para agregar un usuario o un rol, con la diferencia que si se elige tipo usuario pedirá uno más que es contraseña para poder conectarse a la base de datos.
+	    							</p>
+	    							<center><a href="img/agregarRol.png"><img class="imgAgregarAcciones"src="img/agregarRol.png"></a></center>
+	    									<center><h5 class="paso"> Llenar campos Rol </h5></center>
+	    							<center><a href="img/agregarUsuario.png"><img class="imgAgregarAcciones"src="img/agregarUsuario.png"></a></center>
+	    									<center><h5 class="paso"> Llenar campos Usuario </h5></center>
+	    							
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 3(Guardar Usuario o Rol)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego de haber introducido todos los campos del usuario o rol a crear le da click al botón de guardar de color verde que se encuentra en la parte inferior.
+	    							</p>
+	    							<center><a href="img/guardarRolAgregar.png"><img class="imgAgregarAcciones"src="img/guardarRolAgregar.png"></a></center>
+	    									<center><h5 class="paso"> Guardar rol y mensaje</h5></center>
+
+	    							<center><a href="img/guardarUsuarioAgregar.png"><img class="imgAgregarAcciones"src="img/guardarUsuarioAgregar.png"></a></center>
+	    									<center><h5 class="paso"> Guardar usuario y mensaje</h5></center>
+	    							
+
+	    							
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+
+	    			<br>
+	    			<div class="row" id="modificarUsuario">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Modificar Usuario</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite modificar un usuario o rol en la base de datos si se tiene el permiso. Le explicaremos paso a paso como agregar un usuario o rol. 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 1 (seleccionar usuario o rol a modificar) </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Para modificar un rol o usuario debe poseer el permiso de modificar usuario, de tenerlo pasar el cursor sobre el rol o usuario que desea modificar, le aparecerá un ícono azul(Lápiz) el cual al darle click se desplegará una pantalla donde aparecerán los datos del usuario o rol.
+	    							</p>
+	    							<center><a href="img/iconoModificarUsuario.png"><img class="imgAgregarAcciones"src="img/iconoModificarUsuario.png"></a></center>
+	    									<center><h5 class="paso"> Icono Modificar usuario o rol</h5></center>
+
+
+	    					
+	    						 
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 2 (Cambiar Datos)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Se mostrarán todos los campos para modificar un usuario o un rol con la diferencia que si se selecciona como tipo rol
+	    							no pedirá contraseña por que no pueden inciar sesión. Si se desea modificar la contraseña pedirá la anterior. Un usuario puede cambiar a rol y viceversa
+	    							</p>
+	    							<center><a href="img/modificarCamposUsuario.png"><img class="imgAgregarAcciones"src="img/modificarCamposUsuario.png"></a></center>
+	    									<center><h5 class="paso"> Llenar campos usuario o rol a modificar</h5></center>
+
+	    							
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 3(Guardar usuario o rol modificado)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego de haber introducido todos los campos del usuario o rol le da click al botón de guardar de color verde que se encuentra en la parte inferior y esperar el mensaje del servidor.
+	    							</p>
+
+	    							<center><a href="img/guardarModificarUsuarioMensaje.png"><img class="imgAgregarAcciones"src="img/guardarModificarUsuarioMensaje.png"></a></center>
+	    									<center><h5 class="paso"> Guardar usuario modificado y mensaje</h5></center>
+	    							
+
+	    							
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+
+
+	    			<br>
+	    			<div class="row" id="eliminarUsuario">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos"> ELiminar usuario</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite eliminar un usuario o rol en la base de datos si se tiene el permiso. Le explicaremos paso a paso como eliminar un usuario o rol. 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 1 (seleccionar usuario o rol a eliminar) </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Para eliminar un rol o usuario debe poseer el permiso de eliminar usuario, de tenerlo con pasar el cursor sobre el rol o usuario aparecerá un ícono de x (color rojo) el cual al darle click se desplegará una confirmación.
+	    							</p>
+	    							<center><a href="img/iconoEliminarUsuario.png"><img class="imgAgregarAcciones"src="img/iconoEliminarUsuario.png"></a></center>
+	    									<center><h5 class="paso"> Ícono eliminar usuario o rol</h5></center>
+
+
+	    					
+	    						 
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 2 (Aceptar confirmación)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Al darle click al botón de eliminar se desplegará la confirmación de eliminar el usuario o rol, debe darle click a ok y listo.
+	    							</p>
+	    							<center><a href="img/confirtEliminarUsuario.png"><img class="imgAgregarAcciones"src="img/confirtEliminarUsuario.png"></a></center>
+	    									<center><h5 class="paso"> Aceptar confirmación eliminar</h5></center>
+
+	    							
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Paso 3(Esperar mensaje del servidor)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego de haber aceptado la confirmación, espere el mensaje del servidor, recuerde que si su configuracion era de usuarios de base de datos el usuario será eliminado también de base de datos.
+	    							</p>
+
+	    							<center><a href="img/mensajeEliminarMEnsaje.png"><img class="imgAgregarAcciones"src="img/mensajeEliminarMEnsaje.png"></a></center>
+	    									<center><h5 class="paso"> Mensaje de eliminar usuario</h5></center>
+	    							
+
+	    							
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+
+	    			<br>
+
+	    			<div class="row" id="privilegio">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Administrar privilegios</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp; 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+	    					<br>
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">¿Qué son los privilegios? </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Son los permisos que tiene un usuario sobre una acción (leer qué es una acción). Por ejemplo agregarUsuario igual a true, es decir; puede agregar un usuario.
+	    							</p>
+
+	    							<center><h2 class="titleModulos2">¿Para quá sirven? </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Los privilegios sirven para negar o dar el acceso de usuarios a funcionalidades de la aplicación. 
+	    							</p>
+
+	    							<center><h2 class="titleModulos2">Privilegios con usuarios de base de datos </h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Cuando se administrán los privilegios con usuarios de base de datos, el usuario que se le otorgue una acción se le concederán los permisos en tablas que esta tenga asociada, si quita el privilegio sobre la acción revocará los permisos sobre las tablas.
+	    							</p>
+	    						 	<center><a href="img/seguridad.png"><img class="imgAgregarAcciones"src="img/seguridad.png"></a></center>
+	    								
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">Privilegios sin usuarios de base de datos</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Si se utiliza la aplicación con la configuración sin usuarios de base de datos, al momento de otorgarle un privilegio o acción a un usuario no se realizará ningún cambio en base de datos ya que solo existe la conexión del administrador. Solo puede utilizar el objeto permiso para asignar o revocar permisos sobre funcionalidades.
+	    							</p>
+	    							<center><h2 class="titleModulos2">Usuarios con permiso de otorgar y revocar privilegios</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Cuando se tiene la configuración de usuarios de base de datos, los usuarios que tengan el privilegio de otorgar o revocar privilegios a otros pasarán a ser super usuarios de base de datos ya que solo estos son los que pueden realizar grant y revoque sobre tablas.  
+	    							</p>
+	    							<center><a href="img/administrarPrivilegios.png"><img class="imgAgregarAcciones"src="img/administrarPrivilegios.png"></a></center>
+	    									<center><h5 class="paso"> Pantalla de administrar privilegios </h5></center>
+	    							
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<center><h2 class="titleModulos2">¿Cómo acceder?</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Para acceder a la pantalla donde se encuentra la administración de privilegios, el usuario debe poseer mínimo el permiso de administrar privilegios y en el menú superior se encontrará la opción de permisología, se pasa el cursor sobre esta y se desplegará una lista en la cual se encontrará administrar privilegios y darle click. 
+	    							</p>
+
+	    							<center><a href="img/botonAdministrarPrivilegios.png"><img class="imgAgregarAcciones"src="img/botonAdministrarPrivilegios.png"></a></center>
+	    									<center><h5 class="paso"> Acceder a administrar privilegios </h5></center>
+
+	    							<center><h2 class="titleModulos2">Importante</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Al usar usuarios de base de datos y  otorgar la acción de administrar privilegios este usuario pasará a ser un super user de base de datos con el mismo poder del administrador. 
+	    							</p>
+	    						</div>
+	    					</div>
+
+	    				</div>
+	    			</div>
+
+
+	    			<div class="row" >
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<<center><h2 class="titleModulos2">¿Cómo usar los permisos del usuario en código?</h2></center>
+	    							<hr>
+	    						</div>
+	    					</div>
+	    					<div class="row">
+	    						<div class="col-lg-6" >
+	    						
+	    							
+	    							<<center><h2 class="titleModulos2">PHP</h2></center>
+	    							<hr>
+	    								<center><a href="img/codigoPHP.png"><img class="imgCodigo"src="img/codigoPHP.png"></a></center>
+	    									<center><h5 class="paso"> Código PHP</h5></center>
+	    						</div>
+	    						<div class="col-lg-6" >
+	    							<<center><h2 class="titleModulos2">TWIG</h2></center>
+	    							<hr>
+	    							<center><a href="img/codigoTwig.png"><img class="imgCodigo"src="img/codigoTwig.png"></a></center>
+	    									<center><h5 class="paso"> Código TWIG</h5></center>
+	    						</div>
+	    					</div>
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<<center><h2 class="titleModulos2">JAVASCRIPT</h2></center>
+	    							<hr>
+	    						</div>
+	    					</div>
+	    				</div>
+	    			</div>			
+	    			<br>
+
+	    			<div class="row" id="otorgarPrivilegio">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos"> Otorgar privilegios</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite otorgar privilegios a usuarios para que tengan acceso a funcionalidades del sistema, le explicaremos paso a paso como otorgar un privilegio. 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    						
+	    							
+	    							<<center><h2 class="titleModulos2">Paso 1(selección de usuario o rol)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Debe seleccionar el usuario o rol al cual le otorgará los privilegios, ya sea mediante el cuadro de búsqueda o scroleando en la lista de usuario que se encuentra en la pantalla, posicionar el cursor sobre él, se aparecerá un ícono de color verde en forma de lápiz al cual debe darle click para desplegar la pantalla de privilegios. 
+	    							</p>
+	    							<center><a href="img/botonOtorgarPrivilegios.png"><img class="imgAgregarAcciones"src="img/botonOtorgarPrivilegios.png"></a></center>
+	    									<center><h5 class="paso"> Ícono administar privilegios a usuario </h5></center>
+	    						</div>
+
+	    						<div class="col-lg-4" >
+	    							<<center><h2 class="titleModulos2">Paso 2(selecionar privilegios a otorgar)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Debe buscar los privilegios que le asignará al usuario o rol ya sea por el campo de búsqueda o scroleando en la lista, están representados con un swich que de estar negado se encuentra con la palabra off en rojo y de poseerlo se encuentra con la 
+	    							palabra on en verde, cuando se modifica un privilegio en su lado derecho del swich posee un *  que representa el cambio que tiene ese privilegio, azul es que se mantiene, verde que se otorgará y rojo que se revocará, al haber localizado los permisos a otorgar se procede a cambiarlos de off  a on arrastrando el swiches hacia la derecha hasta que diga on.
+	    							</p>
+	    							<center><a href="img/otorgandoPrivilegios.png"><img class="imgAgregarAcciones"src="img/otorgandoPrivilegios.png"></a></center>
+	    									<center><h5 class="paso"> Otorgando privilegios </h5></center>
+	    						</div>
+
+	    						<div class="col-lg-4" >
+	    							<<center><h2 class="titleModulos2">Paso 3(guardar Privilegios)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego de haber otorgado los privilegios al usuario se procede a guardar los cambios en el botón azul al final que dice guardar cambios, para verificar, en el pie de la lista existen unos contadores los cuales llevan los permisos que se 
+	    							mantienen en azul, la cantidad de permisos a otorgar en verde y los que se revocaran en rojo. Luego de haber verificado se procede a guardar los cambios y esperar el mensaje del servidor.
+	    							</p>
+	    							<center><a href="img/guardarOtorgarPrivilegio.png"><img class="imgAgregarAcciones"src="img/guardarOtorgarPrivilegio.png"></a></center>
+	    									<center><h5 class="paso"> Guardar privilegios </h5></center>
+	    						</div>
+	    					</div>
+	    				</div>
+	    			</div>
+
+
+	    			<div class="row" id="revocarPrivilegio">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos"> Revocar privilegios</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite revocar privilegios a usuarios para que no tengan acceso a funcionalidades del sistema, le explicaremos paso a paso como revocar un privilegio. 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    						
+	    							
+	    							<<center><h2 class="titleModulos2">Paso 1(selección de usuario o rol)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Debe seleccionar el usuario o rol al cual revocará los privilegios, ya sea mediante el cuadro de búsqueda o scroleando en la lista de usuarios que se encuentra en la pantalla, posicione el cursor sobre él y aparcerá un ícono de color verde en forma de lápiz al cual debe darle click para desplegar la pantalla de privilegios. 
+	    							</p>
+	    							<center><a href="img/botonOtorgarPrivilegios.png"><img class="imgAgregarAcciones"src="img/botonOtorgarPrivilegios.png"></a></center>
+	    									<center><h5 class="paso"> Icono administar privilegios a usuario </h5></center>
+	    						</div>
+
+	    						<div class="col-lg-4" >
+	    							<<center><h2 class="titleModulos2">Paso 2(selecionar privilegios a revocar)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Debe buscar los privilegios que le revocará al usuario o rol ya sea por el campo de búsqueda o scroleando en la lista, los privilegios están representados con un swich que de estar negado se encuentra con la palabra off en rojo y de poseerlo se encuentra con la 
+	    							palabra on en verde. Csuando se modifica un privilegio en su lado derecho posee un *  que representa el cambio que tiene, azul es que se mantiene, verde que se otorgará y rojo que se revocará, se procede a cambiarlos de on  a off arrastrándolos hacia la izquierda.
+	    							</p>
+	    							<center><a href="img/revocandoPrivilegios.png"><img class="imgAgregarAcciones"src="img/revocandoPrivilegios.png"></a></center>
+	    									<center><h5 class="paso"> Revocando privilegios </h5></center>
+	    						</div>
+
+	    						<div class="col-lg-4" >
+	    							<<center><h2 class="titleModulos2">Paso 3(guardar privilegios)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego de haber revocado los privilegios al usuario se procede a guardar los cambios en el botón azul al final que dice guardar cambios, para verificar, en el pie de la lista existen unos contadores los cuales llevan los permisos que se 
+	    							mantienen en azul, la cantidad de permisos a otorgar en verde y los que se revocarán en rojo, se procede a guardar los cambios y esperar el mensaje de respuesta del servidor.
+	    							</p>
+	    							<center><a href="img/mensajeRevocarPRivilegios.png"><img class="imgAgregarAcciones"src="img/mensajeRevocarPRivilegios.png"></a></center>
+	    									<center><h5 class="paso"> Guardar privilegios </h5></center>
+	    						</div>
+	    					</div>
+	    				</div>
+	    			</div>
+	    			<br>
+	    			<div class="row" id="clonarPrivilegio">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos"> Clonar privilegios</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<p class="parrafoModulo">&nbsp;&nbsp;Esta opción permite clonarle a un usuario la permisología de otro. 
+	    							 </p>
+
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    						
+	    							
+	    							<<center><h2 class="titleModulos2">Paso 1(seleccion de usuario o rol)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Debe seleccionar el usuario o rol al cual le colocarán los privilegios del otro, ya sea mediante el cuadro de búsqueda o scroleando en la lista de usuarios que se encuentra en la pantalla, posicione el cursor sobre él y se aparecerá un ícono de color verde en forma de lápiz el cual debe darle click para desplegar la pantalla de privilegios. 
+	    							</p>
+	    							<center><a href="img/botonOtorgarPrivilegios.png"><img class="imgAgregarAcciones"src="img/botonOtorgarPrivilegios.png"></a></center>
+	    									<center><h5 class="paso"> Ícono administar privilegios a usuario </h5></center>
+	    							<center><a href="img/clone.png"><img class="imgAgregarAcciones"src="img/clone.png"></a></center>
+	    									
+	    						</div>
+
+	    						<div class="col-lg-4" >
+	    							<<center><h2 class="titleModulos2">Paso 2(Buscar usuario a clonar)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego se posiciona en el campo de búsqueda de clonar, introduce el usuario que se desea clonar su permisología, éste
+	    							posee un autocompletar para buscar los usuarios y roles, se procede a darle click e inmediatamente se cargarán todos los privilegios .
+	    							</p>
+	    							<center><a href="img/buscarUsuarioClonar.png"><img class="imgAgregarAcciones"src="img/buscarUsuarioClonar.png"></a></center>
+	    									<center><h5 class="paso"> clonar permisos de jhonnyvi </h5></center>
+	    							<center><a href="img/clonandoPrimisologio.png"><img class="imgAgregarAcciones"src="img/clonandoPrimisologio.png"></a></center>
+	    									<center><h5 class="paso"> Permisos clonados </h5></center>
+	    						</div>
+
+	    						<div class="col-lg-4" >
+	    							<<center><h2 class="titleModulos2">Paso 3(guardar Privilegios)</h2></center>
+	    							<hr>
+	    							<p class="parrafoModulo2">&nbsp;&nbsp; Luego de haber completado la carga de privilegios clonados  al usuario se procede a guardar los cambios en el botón azul al final que dice guardar cambios, para verificar, en el pie de la lista existen unos contadores los cuales llevan los permisos que se 
+	    							mantienen en azul, la cantidad de permisos a otorgar en verde y los que se revocarán en rojo, se procede a guardar los cambios y esperar el mensaje de respuesta del servidor.
+	    							</p>
+	    							<center><a href="img/mensajeRevocarPRivilegios.png"><img class="imgAgregarAcciones"src="img/mensajeRevocarPRivilegios.png"></a></center>
+	    									<center><h5 class="paso"> Guardar privilegios </h5></center>
+	    						</div>
+	    					</div>
+	    				</div>
+	    			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    			<br>
+	    			<div class="row" id="desarrolladores">
+	    				<div class="col-lg-12" >
+	    					<div class="row">
+	    						<div class="col-lg-12" >
+	    							<h2 class="titleModulos">Desarrolladores</h2>
+	    							<hr>
+	    						</div>
+	    					</div>
+
+	    					<div class="row">
+	    						<div class="col-lg-4" >
+	    							<div class="row">
+		      							<div class="col-lg-12 mvcriveroProfile" >
+		        							<div class='fondoMVC' style="background-image: url('img/fondoGera.jpg');"></div>
+		        							<div class="informacion">
+		        								<a href="#"> 
+		        									<img class="imgProfile" src="img/geraldine.jpg">
+		        								</a>
+		        								<h5 class="nombreProfile"> Geraldine Castillo</h5>
+		        								<p class="descripcionProfile"> Ing. Infomática, diseñadora  y desarrolladora del framework MVCRivero</p>
+		        								<a  href="https://github.com/geraldineC"><img class="imgGit"src="img/git.png"> </a>
+		        								<a  href="geralcs94@gmail.com"><img class="imgGit"src="img/Gmail.png"> </a>
+		        								<a  href="https://www.facebook.com/geraldine.castillo.7?fref=nf"><img class="imgGit"src="img/facebook.png"> </a>
+		        							</div>
+		      							</div>
+		      		
+		    						</div>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<div class="row">
+		      							<div class="col-lg-12 mvcriveroProfile" >
+		        							<div class='fondoMVC' style="background-image: url('img/fondoJhonny.jpg');"></div>
+		        							<div class="informacion">
+		        								<a href="#"> 
+		        									<img class="imgProfile" src="img/jhonny.jpg">
+		        								</a>
+		        								<h5 class="nombreProfile"> Jhonny Vielma</h5>
+		        								<p class="descripcionProfile"> Ing. Infomática, diseñador  y desarrollador del framework MVCRivero </p>
+		        								<a  href="https://github.com/jhonnyVi"><img class="imgGit"src="img/git.png"> </a>
+		        								<a  href="jhonnyvq1@gmail.com"><img class="imgGit"src="img/Gmail.png"> </a>
+		        								<a  href="https://www.facebook.com/jhonny.vielma.14"><img class="imgGit"src="img/facebook.png"> </a>
+		        							</div>
+		      							</div>
+		      		
+		    						</div>
+	    						</div>
+	    						<div class="col-lg-4" >
+	    							<div class="row">
+		      							<div class="col-lg-12 mvcriveroProfile" >
+		        							<div class='fondoMVC' style="background-image: url('img/fondoAlamo.jpg');"></div>
+		        							<div class="informacion">
+		        								<a href="#"> 
+		        									<img class="imgProfile" src="img/alamo.jpg">
+		        								</a>
+		        								<h5 class="nombreProfile"> Johán Álamo</h5>
+		        								<p class="descripcionProfile"> Ing. Infomática, diseñador y tutor académico de MVCRivero </p>
+		        								<a  href="https://github.com/johanalamo/MVCRivero_v2"><img class="imgGit"src="img/git.png"></a>
+		        								<a  href="johan.alamo@gmail.com"><img class="imgGit"src="img/Gmail.png"> </a>
+		        								<a  href="https://www.facebook.com/johan.alamo?fref=ts"><img class="imgGit"src="img/facebook.png"> </a>
+		        							</div>
+		      							</div>
+		      		
+		    						</div>
+	    						</div>
+	    					</div>
+	    				</div>	
+	    			
+
+
+	    			</div>
+
+
+	    			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    			</div>
+
+    			<div class="col-lg-2" >
+					<div class="row">
+						<div class="col-lg-12 informacionFramework" >
+							<h5 class="h5InfoGeneral">Información general</h5>
+							
+							<a  href="http://www.gnu.org/licenses/gpl-3.0.html"><img class="imgGit2"src="img/gpl.png"> Licencia GPL </a>
+							<h5><img class="imgGit2"src="img/cp.png"> copyright I.U.T Dr.FRP </h5>
+							<h5> <i class="glyphicon glyphicon-pushpin"></i>  Caracas -Venezuela</h5>
+							<h5 class="h5InfoGeneral">Desarrolladores</h5>
+							<h5> <i class="glyphicon glyphicon-user"></i><a  href="https://www.facebook.com/geraldine.castillo.7"> Geraldine Castillo</a></h5>
+							<h5> <i class="glyphicon glyphicon-user"></i><a  href="https://www.facebook.com/jhonny.vielma.14"> Jhonny Vielma</a></h5>
+							<h5 class="h5InfoGeneral">Tutor académico</h5>
+							<h5> <i class="glyphicon glyphicon-user"></i><a  href="https://www.facebook.com/johan.alamo?fref=ts"> Johán Álamo</a></h5>
+						</div>
+					</div>
+					
+					
+					<br>
+					<div class="row" id="contenidoDocumentacion">
+						<div class="col-lg-12 contenidoDocumentacion" >
+
+							<ul id="listaContenido">
+								
+
+								<li>
+									<a id="listaContenido-introduccion" href="#introduccion">Introducción</a>
+								</li>
+
+								<li>
+									<a id="listaContenido-requisito" href="#requisitosMinimos">Requisitos mínimos</a>
+								</li>
+
+								<li>
+									<a id="listaContenido-accion" href="#accion">Acción</a>
+									<ul  class="listaContenido">
+										<li>
+											<a id="listaContenido-agregarAccion" href="#agregarAccion">Agregar acción</a>
+										</li>
+										<li>
+											<a id="listaContenido-modificarAccion" href="#modificarAccion">Modificar acción</a>
+										</li>
+										<li>
+											<a id="listaContenido-eliminarAccion" href="#eliminarAccion">Eliminar acción</a>
+										</li>
+									</ul>
+								</li>
+
+								<li>
+									<a id="listaContenido-tabla" href="#tabla">Tabla</a>
+									<ul  class="listaContenido">
+										<li>
+											<a id="listaContenido-agregarTabla" href="#agregarTabla">Agregar tabla</a>
+										</li>
+										<li>
+											<a id="listaContenido-modificarTabla" href="#modificarTabla">Modificar tabla</a>
+										</li>
+										<li>
+											<a id="listaContenido-eliminarTabla" href="#eliminarTabla">Eliminar tabla</a>
+										</li>
+									</ul>
+								</li>
+
+								<li>
+									<a id="listaContenido-modulo" href="#modulo">Módulo</a>
+									<ul  class="listaContenido">
+										<li>
+											<a id="listaContenido-agregarModulo" href="#agregarModulo">Agregar módulo</a>
+										</li>
+										<li>
+											<a id="listaContenido-modificarModulo" href="#modificarModulo">Modificar módulo</a>
+										</li>
+										<li>
+											<a id="listaContenido-eliminarModulo" href="#eliminarModulo">Eliminar módulo</a>
+										</li>
+									</ul>
+								</li>
+
+								<li>
+									<a id="listaContenido-usuario" href="#usuario">Usuario</a>
+									<ul  class="listaContenido">
+										<li>
+											<a id="listaContenido-agregarUsuario" href="#agregarUsuario">Agregar usuario</a>
+										</li>
+										<li>
+											<a id="listaContenido-modificarUsuario" href="#modificarUsuario">Modificar usuario</a>
+										</li>
+										<li>
+											<a id="listaContenido-eliminarUsuario" href="#eliminarUsuario">Eliminar usuario</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a id="listaContenido-privilegios" href="#privilegio">Privilegios</a>
+									<ul  class="listaContenido">
+										<li>
+											<a id="listaContenido-otorgarPrivilegio" href="#otorgarPrivilegio">Otorgar privilegio</a>
+										</li>
+										<li>
+											<a id="listaContenido-revocarPrivilegio" href="#revocarPrivilegio">Revocar Privilegio</a>
+										</li>
+										<li>
+											<a id="listaContenido-clonarPrivilegios" href="#clonarPrivilegios">Clonar privilegios</a>
+										</li>
+									</ul>
+								</li>
+								
+								<li>
+									<a id="listaContenido-desarrolladores" href="#desarrolladores">Desarrolladores</a>
+								</li>
+
+
+
+							</ul>	
+						
+						</div>
+					</div>
+    			</div>
+
+    		</div>
+		</div>
+
+		
+
+
+	</body>
+	
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">35</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1944691806"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1944691806" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Accion.html">Accion</a></li>
+                                                    <li class="class"><a href="../classes/AccionControlador.html">AccionControlador</a></li>
+                                                    <li class="class"><a href="../classes/AccionServicio.html">AccionServicio</a></li>
+                                                    <li class="class"><a href="../classes/Componentes.html">Componentes</a></li>
+                                                    <li class="class"><a href="../classes/Conexion.html">Conexion</a></li>
+                                                    <li class="class"><a href="../classes/ErrorControlador.html">ErrorControlador</a></li>
+                                                    <li class="class"><a href="../classes/ErrorServicio.html">ErrorServicio</a></li>
+                                                    <li class="class"><a href="../classes/Instalacion.html">Instalacion</a></li>
+                                                    <li class="class"><a href="../classes/InstalacionControlador.html">InstalacionControlador</a></li>
+                                                    <li class="class"><a href="../classes/InstalacionServicio.html">InstalacionServicio</a></li>
+                                                    <li class="class"><a href="../classes/Instituto.html">Instituto</a></li>
+                                                    <li class="class"><a href="../classes/InstitutoControlador.html">InstitutoControlador</a></li>
+                                                    <li class="class"><a href="../classes/InstitutoServicio.html">InstitutoServicio</a></li>
+                                                    <li class="class"><a href="../classes/LoginControlador.html">LoginControlador</a></li>
+                                                    <li class="class"><a href="../classes/LoginServicio.html">LoginServicio</a></li>
+                                                    <li class="class"><a href="../classes/manejoErrores.html">manejoErrores</a></li>
+                                                    <li class="class"><a href="../classes/Modulo.html">Modulo</a></li>
+                                                    <li class="class"><a href="../classes/ModuloControlador.html">ModuloControlador</a></li>
+                                                    <li class="class"><a href="../classes/ModuloServicio.html">ModuloServicio</a></li>
+                                                    <li class="class"><a href="../classes/Permisos.html">Permisos</a></li>
+                                                    <li class="class"><a href="../classes/PostGet.html">PostGet</a></li>
+                                                    <li class="class"><a href="../classes/PrincipalControlador.html">PrincipalControlador</a></li>
+                                                    <li class="class"><a href="../classes/Sesion.html">Sesion</a></li>
+                                                    <li class="class"><a href="../classes/Tabla.html">Tabla</a></li>
+                                                    <li class="class"><a href="../classes/TablaAccion.html">TablaAccion</a></li>
+                                                    <li class="class"><a href="../classes/TablaControlador.html">TablaControlador</a></li>
+                                                    <li class="class"><a href="../classes/TablaServicio.html">TablaServicio</a></li>
+                                                    <li class="class"><a href="../classes/Usuario.html">Usuario</a></li>
+                                                    <li class="class"><a href="../classes/UsuarioControlador.html">UsuarioControlador</a></li>
+                                                    <li class="class"><a href="../classes/UsuarioServicio.html">UsuarioServicio</a></li>
+                                                    <li class="class"><a href="../classes/Util.html">Util</a></li>
+                                                    <li class="class"><a href="../classes/Vista.html">Vista</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>ErrorServicio</h1>
+                    <p><em>ErrorServicio.php - Servicio del módulo Errores.</em></p>
+                    <p>Esta clase ofrece el servicio de conexión a la base de datos, recibe
+los parámetros, construye las consultas SQL, hace las peticiones a
+la base de datos y retorna los objetos o datos correspondientes a la
+acción. Todas las funciones de esta clase relanzan las excepciones si son capturadas.
+Esto con el fin de que la clase manejadora de errores las capture y procese.
+Esta clase trabaja en conjunto con la clase Conexion.</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/ErrorServicio.html#method_listar" class="">listar()</a><br />
+                                                                    <a href="../classes/ErrorServicio.html#method_listarEstado" class="">listarEstado()</a><br />
+                                                                    <a href="../classes/ErrorServicio.html#method_obtenerMaxCodigo" class="">obtenerMaxCodigo()</a><br />
+                                                                    <a href="../classes/ErrorServicio.html#method_agregarError" class="">agregarError()</a><br />
+                                                                    <a href="../classes/ErrorServicio.html#method_modificarError" class="">modificarError()</a><br />
+                                                                    <a href="../classes/ErrorServicio.html#method_eliminarError" class="">eliminarError()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/modulos.error.modelo.ErrorServicio.html"><div class="path-wrapper">modulos/error/modelo/ErrorServicio.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Servicios</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\ErrorServicio</div>
+                            </dd>
+
+                        
+                        
+                        
+                                                                            <dt>See also</dt>
+                                                                                    <dd><a href="base/clases/utilitarias/errores/manejoErrores.php"><div class="namespace-wrapper">Clase manejadora de errores.</div></a></dd>
+                                                        <dd><a href="/base/clases/conexion/Conexion.php"><div class="namespace-wrapper">Clase Conexion</div></a></dd>
+                                                    
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                copyright
+                            </th>
+                            <td>
+                                                                    <p>2016 - Instituto Universtiario de Tecnología Dr. Federico Rivero Palacio</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                license
+                            </th>
+                            <td>
+                                                                    <p>GPLv3</p>
+                                                                    <p><a href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a></p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>JEAN PIERRE SOSA GOMEZ (jean_pipo_10@hotmail.com)</p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                        
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_listar" name="method_listar" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">listar()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">listar(integer  <span class="argument">$codigo = null</span>) : array|null</pre>
+                <p><em>Función que permite listar($codigo=null) todos los errores almacenados en la base de datos.</em></p>
+                <p>Puede recibir por parametro el codigo del error o null y dependiendo del valor va a listar todos los errores o solo uno,
+luego va realizar la consulta a la base de datos y retorna un arreglo asociativo con los errores obtenidos o
+null si no se encontró coincidencia.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$codigo </td>
+                                <td><p>Código del error con el que se listarán el error.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>Si se producen errores en operaciones con la base de datos.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array|null
+                                            &mdash; <p>Retorna un arreglo de arreglos asociativos o null de no encontrarse coincidencias.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_listarEstado" name="method_listarEstado" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">listarEstado()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">listarEstado(integer  <span class="argument">$codigo = null</span>) : array|null</pre>
+                <p><em>Función que permite listarEstado($codigo = null) todos los estados de error almacenados en la base de datos.</em></p>
+                <p>Puede recibir por parametro el codigo del estado del error o null y dependiendo del valor va a listar todos los
+estados de  error o solo los seleccionados, luego va realizar la consulta a la base de datos
+y retorna un arreglo asociativo con los estados de error obtenidos o
+null si no se encontró coincidencia.</p>
+<p>PD:un ejemplo de estado de error son &quot;en proceso&quot;,&quot;corregido&quot;,&quot;revisado&quot;, entre otros.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$codigo </td>
+                                <td><p>Código del estado de error con el que se listarán los estados.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>Si se producen errores en operaciones con la base de datos.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    array|null
+                                            &mdash; <p>Retorna un arreglo de arreglos asociativos o null de no encontrarse coincidencias.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerMaxCodigo" name="method_obtenerMaxCodigo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerMaxCodigo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerMaxCodigo() : integer</pre>
+                <p><em>Función pública y estática que permite obtener el máximo código de la tabla t_error.</em></p>
+                <p>Retorna un entero con el máximo código.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>Si se producen errores en operaciones con la base de datos.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    integer
+                                            &mdash; <p>El máximo código de los cursos consultados.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_agregarError" name="method_agregarError" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">agregarError()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">agregarError(integer  <span class="argument">$codigoError</span>, integer  <span class="argument">$codUsuario</span>, \chart  <span class="argument">$codEstatus</span>, String  <span class="argument">$fecReporte</span>, String  <span class="argument">$fecRespuesta</span>, String  <span class="argument">$descripcion</span>, String  <span class="argument">$respuesta</span>, String  <span class="argument">$cadenaError</span>) </pre>
+                <p><em>Función pública y estática que permite agregar un error a la base de datos.</em></p>
+                <p>Esta funcion es la encargada de agregar un nuevo error a la base de datos, donde recibe cierta cantidad parametros
+para ser almacenados en la tabla t_error.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$codigoError </td>
+                                <td><p>Codigo del error este es el idenficiador del reporte.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$codUsuario </td>
+                                <td><p>Codigo del usuario es el codigo del usuario que esta reportando el error.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\chart</td>
+                                <td>$codEstatus </td>
+                                <td><p>Es el estados que va a poseer el reporte.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>String</td>
+                                <td>$fecReporte </td>
+                                <td><p>Es la fecha de cuando se hizo el reporte.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>String</td>
+                                <td>$fecRespuesta </td>
+                                <td><p>Contiene null.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>String</td>
+                                <td>$descripcion </td>
+                                <td><p>Contiene la descripcion del error.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>String</td>
+                                <td>$respuesta </td>
+                                <td><p>contiene null.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>String</td>
+                                <td>$cadenaError </td>
+                                <td><p>.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>Con el mensaje &quot;No se pudo reportar el error.&quot;
+si no se pudo llevar a cabo la operación.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_modificarError" name="method_modificarError" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">modificarError()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">modificarError(\chart  <span class="argument">$estado = null</span>, String  <span class="argument">$respuesta = null</span>, integer  <span class="argument">$id = null</span>, \Dae  <span class="argument">$fecha = null</span>) </pre>
+                <p><em>Función pública y estática que permite modiciar un reporte de error.</em></p>
+                <p>Esta funcion es la encargada de modificar un reporte de error, se pasan cierta cantidad de parámetros
+para ser modificados en la base de datos.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>\chart</td>
+                                <td>$estado </td>
+                                <td><p>Es el codigo del estado que posee el reporte.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>String</td>
+                                <td>$respuesta </td>
+                                <td><p>Es la respuesta dada por la persona que esta corrigiendo el error.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$id </td>
+                                <td><p>Es el codigo de identificacion que posee el reporte en la base de datos.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>\Dae</td>
+                                <td>$fecha </td>
+                                <td><p>Es la fecha de identificacion que posee el reporte en la base de datos.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>Con el mensaje &quot;No se logro modificar el Error.&quot; cuando
+no se puede llevar a cabo la operación.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_eliminarError" name="method_eliminarError" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">eliminarError()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">eliminarError(integer  <span class="argument">$codigo</span>) </pre>
+                <p><em>Función pública y estática que permite eliminar un reporte.</em></p>
+                <p>Recibe como parámetro el código del reporte que se va a eliminar, de estar este error reportado
+en la base de datos se va a eliminar.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$codigo </td>
+                                <td><p>Código del reporte a ser eliminado de la base de datos.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>Con el mensaje &quot;No se logro borrar reporte.&quot;
+si no se puede llevar a cabo la eliminación.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">ErrorServicio.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/modulos/error/modelo/ErrorServicio.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on March 15th, 2016 at 20:19.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<?php
+/**
+ * ModuloServicio.php - Servicio del módulo modulo.
+ * 
+ * Esta clase ofrece el servicio de conexión a la base de datos, recibe 
+ * los parámetros, construye las consultas SQL, hace las peticiones a 
+ * la base de datos y retorna los objetos o datos correspondientes a la
+ * acción. Todas las funciones de esta clase relanzan las excepciones si son capturadas,
+ * esto con el fin de que la clase manejadora de errores las capture y procese.
+ *
+ * @copyright 2016 - Instituto Universtiario de Tecnología Dr. Federico Rivero Palacio
+ * @license GPLv3
+ * @license http://www.gnu.org/licenses/gpl-3.0.html
+ * 
+ * @author GERALDINE CASTILLO (geralcs94@gmail.com)
+ * @author JHONNY VIELMA 	  (jhonnyvq1@gmail.com)
+ * 
+ * @package MVC
+ */
+
+class ModuloServicio{
+	/**
+	 * Método que permite retornar un arreglo de objetos Modulo si $tipObjeto es true y sino retorna la matriz
+	 * de la información extraída de base de datos.
+	 *
+	 * @param Boolean $tipObjeto 		    Si se quiere la respuesta un arreglo objetos Modulo.
+	 * @param matriz $modMatriz				Matriz que contiene la información extraída de base de datos.
+	 * @return  Ninguno. 
+	 * @throws Exception 					No lanza exceptiones.
+	 */
+
+	private static function retornar($tipObjeto,$modMatriz){
+			if ($tipObjeto){
+				for($i = 0; $i < count($modMatriz); $i++){
+					$modulo=new Modulo();
+					$modulo->asignarCodigo($modMatriz[$i][0]);
+					$modulo->asignarNombre($modMatriz[$i][1]);
+					$modulo->asignarDescripcion($modMatriz[$i][2]);
+					$modulos[]=$modulo;
+		
+				}
+				return $modulos;
+			}
+			else
+				return $modMatriz;
+	}
+	/**
+	 * Método que permite agregar un módulo a la tabla t_modulo 
+	 *
+	 * @param Modulo $modulo	    		Objeto que contiene la información del módulo.
+	 *
+	 * @return Integer || null              Código del modulo agregado. 
+	 * @throws Exception 					En caso de haber un error al agregar el módulo.
+	 */
+
+	public static function agregar($modulo){
+		try{
+			$conexion=Conexion::conectar();
+			$consulta="select per.f_modulo_agregar(?, ?)";
+			$ejecutar=$conexion->prepare($consulta);
+			$ejecutar->setFetchMode(PDO::FETCH_ASSOC);
+			$ejecutar->execute(array($modulo->obtenerNombre(),
+									 $modulo->obtenerDescripcion()
+				
+									)); 
+			
+			
+			$codigo = $ejecutar->fetchColumn(0);
+			if ($codigo)
+				return $codigo;
+			else 
+				throw new Exception("Error al agregar el módulo");
+		}catch(Exception $e){
+			throw $e;
+		}
+	}
+
+
+
+	/**
+	 * Método que permite obtener un módulo según su código . 
+	 * @param Integer $codigo	    		código del módulo a buscar.
+	 * @return Arreglo Modulo 	            Arreglo de objeto Usuario si hay coincidencias
+	 * @throws Exception 					En caso de error.
+	 */
+	public static function obtener($codigo){
+		try{
+			$conexion=Conexion::conectar();
+			$consulta="select per.f_modulo_obtener(?,?)";
+			$ejecutar= $conexion->prepare($consulta);
+			// inicia transaccion
+			$conexion->beginTransaction();
+			$ejecutar->execute(Array($codigo,'cursor'));
+			$cursors = $ejecutar->fetchAll();
+			// cierra cursor
+			$ejecutar->closeCursor();
+			
+			
+			// sirver para leer multiples cursores si es necesario
+			// ejecutar otro query para leer el cursor
+			$ejecutar = $conexion->query('FETCH ALL IN cursor;');
+			$results = $ejecutar->fetchAll();
+			$ejecutar->closeCursor();
+			$conexion->commit();
+			if(count($results) > 0)
+				return self::retornar(true,$results);
+			else	
+				throw new Exception("Error al mostrar la acción");
+		}catch (Exception $e ){
+			throw $e;
+		}
+	}
+
+	/**
+	 * Método que permite modificar un modulo de la tabla t_modulo. 
+	 * @param Modulo $modulo	    		Objeto que contiene la información del módulo.
+	 *
+	 * @throws Exception 					En caso de haber un error al agregar el módulo.
+	 */
+
+	public static function modificar($modulo){
+		try{
+			$conexion=Conexion::conectar();
+			$consulta="select per.f_modulo_modificar(?,?,?)";
+			$ejecutar=$conexion->prepare($consulta);
+		
+			$ejecutar->execute(array($modulo->obtenerCodigo(),
+										$modulo->obtenerNombre(),
+										$modulo->obtenerDescripcion()
+										
+										));
+		}catch(Exception $e){
+			throw $e;
+		}
+	}
+					/**
+	 * Método que permite eliminar un módulo de la tabla t_modulo. 
+	 * @param Integer $codigo	    	Entero que representa el código del módulo.
+	 * @return Ninguno. 
+	 * @throws Ninguna.     
+	 */
+
+	public static function eliminar($codigo){
+		try{
+			$conexion=Conexion::conectar();
+			$consulta="select per.f_modulo_eliminar(?)";
+			$ejecutar=$conexion->prepare($consulta);
+		
+			$ejecutar->execute(array($codigo));
+		}catch(Exception $e){
+			throw $e;
+		}
+	}
+	/**
+	 * Método que permite obtener los módulos por un patrón que se desee . 
+	 * @param String $patron	    		Patrón de búsqueda.
+	 * @return Arreglo Usuario	            Arreglo de objetos Modulo si hay coincidencias
+	 * @throws Exception 					En caso de error.
+	 */
+	public static function filtrar($patron){
+
+ 		try{
+			$conexion=Conexion::conectar();
+			
+			$consulta="select per.f_modulo_filtar('cursor','".$patron."')";
+
+			$ejecutar= $conexion->prepare($consulta);
+			// inicia transaccion
+			$conexion->beginTransaction();
+			$ejecutar->execute();
+			$cursors = $ejecutar->fetchAll();
+			// cierra cursor
+			$ejecutar->closeCursor();
+			// array para almacenar resultado del cursor
+			// sirver para leer multiples cursores si es necesario
+			// ejecutar otro query para leer el cursor
+			$ejecutar = $conexion->query('FETCH ALL IN cursor;');
+			$results = $ejecutar->fetchAll();
+			$ejecutar->closeCursor();
+			$conexion->commit();
+			if(count($results) > 0)
+				return self::retornar(true,$results);
+			else	
+				throw new Exception("Error al mostrar los módulo");
+		}catch (Exception $e ){
+			throw $e;
+		}
+
+	}
+
+
+
+}
+
+
+?>

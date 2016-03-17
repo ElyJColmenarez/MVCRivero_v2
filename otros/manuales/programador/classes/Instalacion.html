@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">35</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-747726921"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-747726921" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Accion.html">Accion</a></li>
+                                                    <li class="class"><a href="../classes/AccionControlador.html">AccionControlador</a></li>
+                                                    <li class="class"><a href="../classes/AccionServicio.html">AccionServicio</a></li>
+                                                    <li class="class"><a href="../classes/Componentes.html">Componentes</a></li>
+                                                    <li class="class"><a href="../classes/Conexion.html">Conexion</a></li>
+                                                    <li class="class"><a href="../classes/ErrorControlador.html">ErrorControlador</a></li>
+                                                    <li class="class"><a href="../classes/ErrorServicio.html">ErrorServicio</a></li>
+                                                    <li class="class"><a href="../classes/Instalacion.html">Instalacion</a></li>
+                                                    <li class="class"><a href="../classes/InstalacionControlador.html">InstalacionControlador</a></li>
+                                                    <li class="class"><a href="../classes/InstalacionServicio.html">InstalacionServicio</a></li>
+                                                    <li class="class"><a href="../classes/Instituto.html">Instituto</a></li>
+                                                    <li class="class"><a href="../classes/InstitutoControlador.html">InstitutoControlador</a></li>
+                                                    <li class="class"><a href="../classes/InstitutoServicio.html">InstitutoServicio</a></li>
+                                                    <li class="class"><a href="../classes/LoginControlador.html">LoginControlador</a></li>
+                                                    <li class="class"><a href="../classes/LoginServicio.html">LoginServicio</a></li>
+                                                    <li class="class"><a href="../classes/manejoErrores.html">manejoErrores</a></li>
+                                                    <li class="class"><a href="../classes/Modulo.html">Modulo</a></li>
+                                                    <li class="class"><a href="../classes/ModuloControlador.html">ModuloControlador</a></li>
+                                                    <li class="class"><a href="../classes/ModuloServicio.html">ModuloServicio</a></li>
+                                                    <li class="class"><a href="../classes/Permisos.html">Permisos</a></li>
+                                                    <li class="class"><a href="../classes/PostGet.html">PostGet</a></li>
+                                                    <li class="class"><a href="../classes/PrincipalControlador.html">PrincipalControlador</a></li>
+                                                    <li class="class"><a href="../classes/Sesion.html">Sesion</a></li>
+                                                    <li class="class"><a href="../classes/Tabla.html">Tabla</a></li>
+                                                    <li class="class"><a href="../classes/TablaAccion.html">TablaAccion</a></li>
+                                                    <li class="class"><a href="../classes/TablaControlador.html">TablaControlador</a></li>
+                                                    <li class="class"><a href="../classes/TablaServicio.html">TablaServicio</a></li>
+                                                    <li class="class"><a href="../classes/Usuario.html">Usuario</a></li>
+                                                    <li class="class"><a href="../classes/UsuarioControlador.html">UsuarioControlador</a></li>
+                                                    <li class="class"><a href="../classes/UsuarioServicio.html">UsuarioServicio</a></li>
+                                                    <li class="class"><a href="../classes/Util.html">Util</a></li>
+                                                    <li class="class"><a href="../classes/Vista.html">Vista</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>Instalacion</h1>
+                    <p><em>Instalación.php - Componente de MVCRIVERO.</em></p>
+                    <p>Clase que permite almacenar en un objeto todos la información de la instalación del MVCRIVERO
+Esta clase facilita todo lo reverenciado a la instalación ya encapsula todo los datos en un objeto
+para un mejor manejo, así como la carga de los datos cuando ya esta instalada la aplicación, ya que
+los datos de instalación se guardan en el archivo config.ini localizado en la raíz, el objeto permite
+cargar esos datos y encapsularlos en el objeto para su utilización.</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Instalacion.html#method_asignarPaso" class="">asignarPaso()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarUsuBD" class="">asignarUsuBD()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarPasos" class="">asignarPasos()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerPasos" class="">obtenerPasos()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerPaso" class="">obtenerPaso()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarUsuConectorBD" class="">asignarUsuConectorBD()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarPassConectorBD" class="">asignarPassConectorBD()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarServidor" class="">asignarServidor()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarPuerto" class="">asignarPuerto()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarBD" class="">asignarBD()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarNombreBD" class="">asignarNombreBD()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarCodificacion" class="">asignarCodificacion()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarNombreAdmin" class="">asignarNombreAdmin()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarApellidoAdmin" class="">asignarApellidoAdmin()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarUsuarioAdmin" class="">asignarUsuarioAdmin()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarPassAdmin" class="">asignarPassAdmin()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarNombreAplicacion" class="">asignarNombreAplicacion()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarAbreviacionAplicacion" class="">asignarAbreviacionAplicacion()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerUsuConectorBD" class="">obtenerUsuConectorBD()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerPassConectorBD" class="">obtenerPassConectorBD()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerServidor" class="">obtenerServidor()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerPuerto" class="">obtenerPuerto()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerBD" class="">obtenerBD()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerNombreBD" class="">obtenerNombreBD()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerCodificacion" class="">obtenerCodificacion()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerNombreAdmin" class="">obtenerNombreAdmin()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerApellidoAdmin" class="">obtenerApellidoAdmin()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerUsuarioAdmin" class="">obtenerUsuarioAdmin()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerPassAdmin" class="">obtenerPassAdmin()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerNombreAplicacion" class="">obtenerNombreAplicacion()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerAbreviacionAplicacion" class="">obtenerAbreviacionAplicacion()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerUsuBD" class="">obtenerUsuBD()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_crearArchivo" class="">crearArchivo()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_guardarDatosAplicacion" class="">guardarDatosAplicacion()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerInstalacionIni" class="">obtenerInstalacionIni()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarCampo1" class="">asignarCampo1()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerCampo1" class="">obtenerCampo1()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarCampo2" class="">asignarCampo2()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerCampo2" class="">obtenerCampo2()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_asignarCampo3" class="">asignarCampo3()</a><br />
+                                                                    <a href="../classes/Instalacion.html#method_obtenerCampo3" class="">obtenerCampo3()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Instalacion.html#property_usuarioAdmin" class="">$usuarioAdmin</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_nombreAplicacion" class="">$nombreAplicacion</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_abreviacionAplicacion" class="">$abreviacionAplicacion</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_usuariosBD" class="">$usuariosBD</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_pasos" class="">$pasos</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_campo1" class="">$campo1</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_campo2" class="">$campo2</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_campo3" class="">$campo3</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <em>No protected methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No protected properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Instalacion.html#property_usuConectorBD" class="">$usuConectorBD</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_passConectorBD" class="">$passConectorBD</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_servidor" class="">$servidor</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_puerto" class="">$puerto</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_baseDatos" class="">$baseDatos</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_nombreBD" class="">$nombreBD</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_codificacion" class="">$codificacion</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_nombreAdmin" class="">$nombreAdmin</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_apellidoAdmin" class="">$apellidoAdmin</a><br />
+                                                                    <a href="../classes/Instalacion.html#property_passAdmin" class="">$passAdmin</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/negocio.Instalacion.html"><div class="path-wrapper">negocio/Instalacion.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">MVC</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\Instalacion</div>
+                            </dd>
+
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                copyright
+                            </th>
+                            <td>
+                                                                    <p>2016 - Instituto Universtiario de Tecnología Dr. Federico Rivero Palacio</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                license
+                            </th>
+                            <td>
+                                                                    <p>GPLv3</p>
+                                                                    <p><a href="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</a></p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>GERALDINE CASTILLO (jhonnyvq1@gmail.com)</p>
+                                                                    <p>JHONNY VIELMA      (jhonnyvq1@gmail.com)</p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_usuarioAdmin" name="property_usuarioAdmin" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$usuarioAdmin</h3>
+                <pre class="signature">$usuarioAdmin : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Usuario  del administrador de la base de datos.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_nombreAplicacion" name="property_nombreAplicacion" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$nombreAplicacion</h3>
+                <pre class="signature">$nombreAplicacion : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Nombre de la aplicación que se creo.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_abreviacionAplicacion" name="property_abreviacionAplicacion" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$abreviacionAplicacion</h3>
+                <pre class="signature">$abreviacionAplicacion : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Abreviación del nombre  de la aplicación que se creo.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_usuariosBD" name="property_usuariosBD" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$usuariosBD</h3>
+                <pre class="signature">$usuariosBD : Boolean</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                Boolean
+                &mdash; Boolean true= usuarios de base de datos y false= usuarios común .                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_pasos" name="property_pasos" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$pasos</h3>
+                <pre class="signature">$pasos : Array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                Array
+                &mdash; Pasos que se han cumplido en la instalación.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_campo1" name="property_campo1" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$campo1</h3>
+                <pre class="signature">$campo1 : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Configuración del campo1 para guardar información de los usuarios                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_campo2" name="property_campo2" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$campo2</h3>
+                <pre class="signature">$campo2 : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Configuración del campo2 para guardar información de los usuarios                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_campo3" name="property_campo3" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$campo3</h3>
+                <pre class="signature">$campo3 : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Configuración del campo3 para guardar información de los usuarios                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_usuConectorBD" name="property_usuConectorBD" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$usuConectorBD</h3>
+                <pre class="signature">$usuConectorBD : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Usuario administrador del sistema gestor ejemplo: postgres                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_passConectorBD" name="property_passConectorBD" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$passConectorBD</h3>
+                <pre class="signature">$passConectorBD : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Clave del administrador del sistema gestor.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_servidor" name="property_servidor" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$servidor</h3>
+                <pre class="signature">$servidor : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Servidor donde se encuentra de la base de datos a conectar.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_puerto" name="property_puerto" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$puerto</h3>
+                <pre class="signature">$puerto : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Puerto por el cual se conectara.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_baseDatos" name="property_baseDatos" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$baseDatos</h3>
+                <pre class="signature">$baseDatos : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Base de datos a la cual se conectara por ejemplo PostgreSQL.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_nombreBD" name="property_nombreBD" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$nombreBD</h3>
+                <pre class="signature">$nombreBD : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Nombre de la base de datos a crear.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_codificacion" name="property_codificacion" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$codificacion</h3>
+                <pre class="signature">$codificacion : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Codificación de caracteres que tendrá la base de datos ejemplo:UTF-8.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_nombreAdmin" name="property_nombreAdmin" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$nombreAdmin</h3>
+                <pre class="signature">$nombreAdmin : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Nombre del administrador de la base de datos que se creo.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_apellidoAdmin" name="property_apellidoAdmin" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$apellidoAdmin</h3>
+                <pre class="signature">$apellidoAdmin : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Apellido del administrador de la base de datos que se creo.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_passAdmin" name="property_passAdmin" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$passAdmin</h3>
+                <pre class="signature">$passAdmin : String</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                String
+                &mdash; Clave  del administrador de la base de datos, de no ser usuarios de base de datos                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarPaso" name="method_asignarPaso" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarPaso()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarPaso(Integer  <span class="argument">$paso</span>, Boolean  <span class="argument">$valor</span>) : $this</pre>
+                <p><em>Método que permite asignar un paso de instalación.</em></p>
+                <p>Método publico que permite asignar un true cuando un paso se cumple en la instalación.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>Integer</td>
+                                <td>$paso </td>
+                                <td><p>Numero del paso a asignarle valor.</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>Boolean</td>
+                                <td>$valor </td>
+                                <td><p>True o false dependiendo de lo ocurrido en el paso.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarUsuBD" name="method_asignarUsuBD" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarUsuBD()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarUsuBD(Boolean  <span class="argument">$valor</span>) : $this</pre>
+                <p><em>Método que permite asignar el tipo de usuario de la aplicación.</em></p>
+                <p>Método publico que permite asignar el tipo de usuario que usara la aplicación
+ya sea usuario de base de datos de ser true o false de usuarios comunes.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>Boolean</td>
+                                <td>$valor </td>
+                                <td><p>Tipo de usuario de la aplicación True = usuarios base de datos y false=usuarios comunes.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarPasos" name="method_asignarPasos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarPasos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarPasos(Array  <span class="argument">$pasos</span>) </pre>
+                <p><em>Método que permite asignar todos los pasos de la  instalación.</em></p>
+                <p>Método publico que permite asignar un arreglo de pasos a el atributo de pasos de instalación.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>Array</td>
+                                <td>$pasos </td>
+                                <td><p>Pasos de la instalación.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerPasos" name="method_obtenerPasos" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerPasos()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerPasos() : Array</pre>
+                <p><em>Método que permite obtener los pasos de la instalación.</em></p>
+                <p>Método publico que permite obtener el arreglo de pasos  del atributo de pasos de instalación.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    Array
+                                            &mdash; <p>Pasos de instalación.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerPaso" name="method_obtenerPaso" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerPaso()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerPaso(Integer  <span class="argument">$posi</span>) : Boolean</pre>
+                <p><em>Método que permite obtener el valor de un paso .</em></p>
+                <p>Método publico que permite obtener el valor de un paso de la instalación.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>Integer</td>
+                                <td>$posi </td>
+                                <td><p>Paso de la instalación que se quiere obtener.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    Boolean
+                                            &mdash; <p>Valor del paso en la instalación.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarUsuConectorBD" name="method_asignarUsuConectorBD" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarUsuConectorBD()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarUsuConectorBD(String  <span class="argument">$usuConector</span>) : $this</pre>
+                <p><em>Método que permite asignar el usuario conector base de datos .</em></p>
+                <p>Método publico que permite asignar el usuario conector y administrador del sistema gestor de base de datos
+para crear la base de datos de la aplicación y el usuario administrador de esta base de datos.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$usuConector </td>
+                                <td><p>Usuario conector(administrador) del sistema gestor de base de datos.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarPassConectorBD" name="method_asignarPassConectorBD" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarPassConectorBD()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarPassConectorBD(String  <span class="argument">$pasConector</span>) : $this</pre>
+                <p><em>Método que permite asignar la clave del usuario conector base de datos .</em></p>
+                <p>Método publico que permite asignar la clave del usuario conector y administrador del sistema gestor de base de datos
+para crear la base de datos de la aplicación y el usuario administrador de esta base de datos.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$pasConector </td>
+                                <td><p>Clave del Usuario conector(administrador) del sistema gestor de base de datos.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarServidor" name="method_asignarServidor" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarServidor()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarServidor(String  <span class="argument">$servidor</span>) : $this</pre>
+                <p><em>Método que permite asignar el servidor .</em></p>
+                <p>Método publico que permite asignar el servidor en el cual se encuentra la base de datos a conectarse</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$servidor </td>
+                                <td><p>Servidor donde se encuentra el sistema gestor de base de datos.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarPuerto" name="method_asignarPuerto" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarPuerto()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarPuerto(String  <span class="argument">$puerto</span>) : $this</pre>
+                <p><em>Método que permite asignar el puerto .</em></p>
+                <p>Método publico que permite asignar el puerto para conectarse al sistema gestor de base de datos.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$puerto </td>
+                                <td><p>Puerto para la conexión a la base de datos.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarBD" name="method_asignarBD" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarBD()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarBD(String  <span class="argument">$baseDeDatos</span>) : $this</pre>
+                <p><em>Método que permite asignar el nombre del sistema gestor base de datos.</em></p>
+                <p>Método publico que permite asignar el gestor de base de datos al cual se conectara .</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$baseDeDatos </td>
+                                <td><p>Nombre del sistema gestor de base de datos.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarNombreBD" name="method_asignarNombreBD" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarNombreBD()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarNombreBD(String  <span class="argument">$nombreBD</span>) : $this</pre>
+                <p><em>Método que permite asignar el nombre nombre de la base de datos.</em></p>
+                <p>Método publico que permite asignar el nombre de la base de datos que se creara,
+donde se alojara la data de la aplicación.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$nombreBD </td>
+                                <td><p>Nombre de la base de datos.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarCodificacion" name="method_asignarCodificacion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarCodificacion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarCodificacion(  <span class="argument">$codificacion</span>) : $this</pre>
+                <p><em>Método que permite asignar la codificación de datos.</em></p>
+                <p>Método publico que permite asignar la codificación de caracteres de la
+base de datos ejemplo: UTF-8.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$codificacion </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarNombreAdmin" name="method_asignarNombreAdmin" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarNombreAdmin()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarNombreAdmin(String  <span class="argument">$nombreAdmin</span>) : $this</pre>
+                <p><em>Método que permite asignar el nombre del administrador de la aplicación.</em></p>
+                <p>Método publico que permite asignar la nombre del administrador de la aplicación.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$nombreAdmin </td>
+                                <td><p>Nombre Administrador de la aplicación.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarApellidoAdmin" name="method_asignarApellidoAdmin" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarApellidoAdmin()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarApellidoAdmin(  <span class="argument">$apellidoAdmin</span>) : $this</pre>
+                <p><em>Método que permite asignar el apellido del administrador de la aplicación.</em></p>
+                <p>Método publico que permite asignar el apellido del administrador de la aplicación.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$apellidoAdmin </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarUsuarioAdmin" name="method_asignarUsuarioAdmin" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarUsuarioAdmin()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarUsuarioAdmin(String  <span class="argument">$usuarioAdmin</span>) : $this</pre>
+                <p><em>Método que permite asignar el usuario del administrador de la aplicación.</em></p>
+                <p>Método publico que permite asignar el usuario del administrador de la aplicación.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$usuarioAdmin </td>
+                                <td><p>Usuario Administrador de la aplicación.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarPassAdmin" name="method_asignarPassAdmin" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarPassAdmin()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarPassAdmin(String  <span class="argument">$passAdmin</span>) : $this</pre>
+                <p><em>Método que permite asignar la clave del administrador de la aplicación.</em></p>
+                <p>Método publico que permite asignar la clave del administrador de la aplicación.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$passAdmin </td>
+                                <td><p>Clave administrador de la aplicación.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarNombreAplicacion" name="method_asignarNombreAplicacion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarNombreAplicacion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarNombreAplicacion(String  <span class="argument">$nombreAplicacion</span>) : $this</pre>
+                <p><em>Método que permite asignar el nombre de la aplicación que se creo.</em></p>
+                <p>Método publico que permite asignar el nombre de  de la aplicación que se creo.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>String</td>
+                                <td>$nombreAplicacion </td>
+                                <td><p>Nombre de la aplicación.</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarAbreviacionAplicacion" name="method_asignarAbreviacionAplicacion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarAbreviacionAplicacion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarAbreviacionAplicacion(  <span class="argument">$abreviacionAplicacion</span>) : $this</pre>
+                <p><em>Método que permite asignar la abreviación del nombre de la aplicación.</em></p>
+                <p>Método publico que permite asignar la abreviación  del nombre de la aplicación que se creo.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$abreviacionAplicacion </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerUsuConectorBD" name="method_obtenerUsuConectorBD" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerUsuConectorBD()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerUsuConectorBD() : String</pre>
+                <p><em>Método que permite obtener el usuario conector base de datos .</em></p>
+                <p>Método publico que permite obtener el usuario conector y administrador del sistema gestor de base de datos
+para crear la base de datos de la aplicación y el usuario administrador de esta base de datos.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Usuario conector(administrador) del sistema gestor de base de datos</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerPassConectorBD" name="method_obtenerPassConectorBD" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerPassConectorBD()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerPassConectorBD() : String</pre>
+                <p><em>Método que permite obtener la clave del usuario conector base de datos .</em></p>
+                <p>Método publico que permite obtener la clave del usuario conector y administrador del sistema gestor de base de datos
+para crear la base de datos de la aplicación y el usuario administrador de esta base de datos.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Clave del Usuario conector(administrador) del sistema gestor de base de datos.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerServidor" name="method_obtenerServidor" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerServidor()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerServidor() : String</pre>
+                <p><em>Método que permite obtener el servidor .</em></p>
+                <p>Método publico que permite obtener el servidor en el cual se encuentra la base de datos a conectarse</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Servidor donde se encuentra el sistema gestor de base de datos</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerPuerto" name="method_obtenerPuerto" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerPuerto()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerPuerto() : $this</pre>
+                <p><em>Método que permite obtener el puerto .</em></p>
+                <p>Método publico que permite obtener el puerto para conectarse al sistema gestor de base de datos.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerBD" name="method_obtenerBD" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerBD()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerBD() : String</pre>
+                <p><em>Método que permite obtener el nombre del sistema gestor base de datos.</em></p>
+                <p>Método publico que permite obtener el gestor de base de datos al cual se conectara .</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Nombre del sistema gestor de base de datos..</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerNombreBD" name="method_obtenerNombreBD" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerNombreBD()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerNombreBD() : String</pre>
+                <p><em>Método que permite obtener el nombre nombre de la base de datos.</em></p>
+                <p>Método publico que permite obtener el nombre de la base de datos que se creara,
+donde se alojara la data de la aplicación.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Nombre de la base de datos..</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerCodificacion" name="method_obtenerCodificacion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerCodificacion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerCodificacion() : String</pre>
+                <p><em>Método que permite obtener la codificación de datos.</em></p>
+                <p>Método publico que permite obtener la codificación de caracteres de la
+base de datos ejemplo: UTF-8.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Codificaron de caracteres.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerNombreAdmin" name="method_obtenerNombreAdmin" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerNombreAdmin()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerNombreAdmin() : String</pre>
+                <p><em>Método que permite obtener el nombre del administrador de la aplicación.</em></p>
+                <p>Método publico que permite obtener el nombre del administrador de la aplicación.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Nombre Administrador de la aplicación</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerApellidoAdmin" name="method_obtenerApellidoAdmin" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerApellidoAdmin()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerApellidoAdmin() : String</pre>
+                <p><em>Método que permite obtener el apellido del administrador de la aplicación.</em></p>
+                <p>Método publico que permite obtener el apellido del administrador de la aplicación.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Apellido Administrador de la aplicación..</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerUsuarioAdmin" name="method_obtenerUsuarioAdmin" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerUsuarioAdmin()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerUsuarioAdmin() : String</pre>
+                <p><em>Método que permite obtener el usuario del administrador de la aplicación.</em></p>
+                <p>Método publico que permite obtener el usuario del administrador de la aplicación.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Usuario Administrador de la aplicación.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerPassAdmin" name="method_obtenerPassAdmin" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerPassAdmin()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerPassAdmin() : String</pre>
+                <p><em>Método que permite obtener la clave del administrador de la aplicación.</em></p>
+                <p>Método publico que permite obtener la clave del administrador de la aplicación.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Clave administrador de la aplicación.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerNombreAplicacion" name="method_obtenerNombreAplicacion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerNombreAplicacion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerNombreAplicacion() : String</pre>
+                <p><em>Método que permite obtener el nombre de la aplicación que se creo.</em></p>
+                <p>Método publico que permite obtener el nombre de  de la aplicación que se creo.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Nombre de la aplicación.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerAbreviacionAplicacion" name="method_obtenerAbreviacionAplicacion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerAbreviacionAplicacion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerAbreviacionAplicacion() : String</pre>
+                <p><em>Método que permite obtener la abreviación del nombre de la aplicación.</em></p>
+                <p>Método publico que permite obtener la abreviación  del nombre de la aplicación que se creo.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>Nombre de la aplicación..</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerUsuBD" name="method_obtenerUsuBD" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerUsuBD()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerUsuBD() : Boolean</pre>
+                <p><em>Método que permite obtener el tipo de usuario de la aplicación.</em></p>
+                <p>Método publico que permite obtener el tipo de usuario que usara la aplicación
+ya sea usuario de base de datos de ser true o false de usuarios comunes.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    Boolean
+                                            &mdash; <p>Tipo de usuario de la aplicación True = usuarios base de datos y false=usuarios comunes.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_crearArchivo" name="method_crearArchivo" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">crearArchivo()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">crearArchivo() </pre>
+                <p><em>Método que permite crear el archivo config.ini.</em></p>
+                <p>Método publico que permite crear el archivo.ini en el cual se alojaran todos los datos
+de la aplicación que tienen que ver con la instalación.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                            <span class="label label-info">static</span>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_guardarDatosAplicacion" name="method_guardarDatosAplicacion" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">guardarDatosAplicacion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">guardarDatosAplicacion() </pre>
+                <p><em>Método que permite guardar toda la información de instalación.</em></p>
+                <p>Método publico que permite guardar la información de instalación en el
+archivo config.ini.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerInstalacionIni" name="method_obtenerInstalacionIni" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerInstalacionIni()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerInstalacionIni() </pre>
+                <p><em>Método que permite obtener la información de config.ini.</em></p>
+                <p>Método publico que obtener toda la información alojada en config.ini de instalación
+y la asigna a los atributos correspondientes del objeto.</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarCampo1" name="method_asignarCampo1" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarCampo1()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarCampo1(  <span class="argument">$campo1</span>) : $this</pre>
+                <p><em>Método que permite asignar el campo1.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$campo1 </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerCampo1" name="method_obtenerCampo1" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerCampo1()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerCampo1() : String</pre>
+                <p><em>Método que permite obtener el campo1 .</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>cadena que contiene la configuración del campo 1
+para más información de un usuario.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarCampo2" name="method_asignarCampo2" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarCampo2()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarCampo2(  <span class="argument">$campo2</span>) : $this</pre>
+                <p><em>Método que permite asignar el campo2.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$campo2 </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerCampo2" name="method_obtenerCampo2" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerCampo2()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerCampo2() : String</pre>
+                <p><em>Método que permite obtener el campo2 .</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>cadena que contiene la configuración del campo 2
+para más información de un usuario.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_asignarCampo3" name="method_asignarCampo3" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">asignarCampo3()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">asignarCampo3(  <span class="argument">$campo3</span>) : $this</pre>
+                <p><em>Método que permite asignar el campo3.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$campo3 </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>Instancia del objeto.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_obtenerCampo3" name="method_obtenerCampo3" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">obtenerCampo3()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">obtenerCampo3() : String</pre>
+                <p><em>Método que permite obtener el campo3 .</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Exception</dt>
+                            <dd><p>No lanza exceptiones.</p></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    String
+                                            &mdash; <p>cadena que contiene la configuración del campo 3
+para más información de un usuario.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Instalacion.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/negocio/Instalacion.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on March 15th, 2016 at 20:19.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
