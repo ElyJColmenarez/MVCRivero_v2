@@ -14,6 +14,7 @@
  *  
  * @author JHONNY VIELMA 		(jhonnyvq1@gmail.com)
  * @author GERALDINE CASTILLO 	(geralcs@gmail.com)
+ * @author Johan Alamo (lider de proyecto) <johan.alamo@gmail.com>
  * 
  * 
  * @link /modulos/login/modelo/LoginServicio.php 			 Clase LoginControlador

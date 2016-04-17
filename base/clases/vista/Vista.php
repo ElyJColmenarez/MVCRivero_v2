@@ -19,6 +19,7 @@
  * 
  *  
  * @author JHONNY VIELMA (jhonnyvq1@gmail.com)
+ * @author Johan Alamo (lider de proyecto) <johan.alamo@gmail.com>
  * 
  * @package Componentes
  */

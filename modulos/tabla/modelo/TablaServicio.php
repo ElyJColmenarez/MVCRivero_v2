@@ -21,6 +21,7 @@
  *  
  * @author Geraldine Castillo (geralcs94@gmail.com)
  * @author Jhonny Vielma      (jhonnyvq1@gmail.com)
+ * @author Johan Alamo (lider de proyecto) <johan.alamo@gmail.com>
  * 
  * @package MVC
  */

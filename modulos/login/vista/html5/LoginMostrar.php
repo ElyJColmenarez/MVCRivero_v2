@@ -18,6 +18,7 @@ específicamente en la dirección http://www.gnu.org/licenses/gpl-3.0.html
 Nombre: LoginMostrar.php
 Diseñador: Katherine Rios (kathyr2d2@gmail.com)
 Programador: Katherine Rios
+Lider de proyecto: Johan Alamo (johan.alamo@gmail.com)
 Fecha: febrero de 2013
 Descripción:  
 	

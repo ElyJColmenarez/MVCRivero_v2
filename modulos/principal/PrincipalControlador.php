@@ -13,9 +13,9 @@
  * @license http://www.gnu.org/licenses/gpl-3.0.html
  *
  *
- * @author JOHÁN ALÁMO (geralcs94@gmail.com)
  * @author GERALDINE CASTILLO (geralcs94@gmail.com)
  * @author JHONNY VIELMA 	  (jhonnyvq1@gmail.com)
+ * @author Johan Alamo (lider de proyecto) <johan.alamo@gmail.com>
  * 
  * @package MVC
  *
